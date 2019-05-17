@@ -1,0 +1,329 @@
+<!-- <p-table #dt [columns]="cols" [value]="jobs" dataKey="id" editMode="row" [paginator]="true" [rows]="10" >
+  
+   <ng-template pTemplate="caption" >
+    <div style="text-align: right">        
+        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+    </div>
+  </ng-template>
+
+  
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field" style="width: 194px">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+    </tr>
+    <tr>
+      <th *ngFor="let col of columns" [ngSwitch]="col.field">
+          <input class="detail" *ngSwitchCase="'id'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          <input class="detail" *ngSwitchCase="'Title'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          
+          <div *ngSwitchCase="'MaxSalary'">
+              Value > {{yearFilter}}
+              <i class="fa fa-close" (click)="yearFilter=null;dt.filter(null, col.field, col.filterMatchMode)" style="cursor:pointer" *ngIf="yearFilter"></i>
+              <p-slider [style]="{'width':'100%','margin-top':'8px'}" [(ngModel)]="yearFilter" [min]="2000" [max]="7000" (onChange)="onYearChange($event, dt)"></p-slider>
+          </div>
+
+          <div *ngSwitchCase="'MinSalayry'">
+                Value > {{yearFilter1}}
+                <i class="fa fa-close" (click)="yearFilter=null;dt.filter(null, col.field, col.filterMatchMode)" style="cursor:pointer" *ngIf="yearFilter"></i>
+                <p-slider [style]="{'width':'100%','margin-top':'8px'}" [(ngModel)]="yearFilter1" [min]="0" [max]="1900" (onChange)="onYearChange1($event, dt)"></p-slider>
+          </div>
+          <p-dropdown  *ngSwitchCase="'Location'" [options]="brands" [style]="{'width':'80%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+          <p-dropdown *ngSwitchCase="'Level'" [options]="levels" [style]="{'width':'80%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+      </th>
+   </tr>
+    
+</ng-template>
+
+<ng-template pTemplate="body" let-columns="columns"     let-rowData let-editing="editing" let-ri="rowIndex"  >
+      <tr [pEditableRow]="rowData">
+          <td> 
+              {{rowData.id}}
+          </td>
+
+          <td>
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="rowData.MaxSalary" required>
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                          {{rowData.MaxSalary}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+
+
+
+          <td>
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="rowData.MinSalayry">
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                          {{rowData.MinSalayry}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+
+
+
+          <td >
+              <p-cellEditor>
+                  <ng-template pTemplate="input"  >
+                      <input pInputText type="text" [(ngModel)]="rowData.Title">
+                  </ng-template>
+                  <ng-template pTemplate="output" >
+                          {{rowData.Title}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+
+
+          <td >
+            <p-cellEditor>
+                <ng-template pTemplate="input">
+                    <input pInputText type="text" [(ngModel)]="rowData.Location" required [ngStyle]="{'width':'100%'}">
+                </ng-template>
+                <ng-template pTemplate="output">
+                    {{rowData.Location}}
+                </ng-template>
+            </p-cellEditor>
+          </td>
+
+
+          <td >
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="rowData.Level">
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                          {{rowData.Level}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+        <td style="text-align:center">
+                <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil" class="ui-button-info" (click)="onRowEditInit(rowData)"></button>
+                <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check" class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(rowData)"></button>
+                <button *ngIf="editing" pButton type="button" pCancelEditableRow icon="pi pi-times" class="ui-button-danger" (click)="onRowEditCancel(rowData, ri)"></button>
+        </td>
+        <td>
+            <div style="text-align:left">
+                    <p-inplace>
+                            <span pInplaceDisplay>
+                                <span class="fa fa-table"></span><span style="margin-left:8px">Xem ho so</span>
+                            </span>
+                            <span pInplaceContent>
+                                       <h3>xxxx</h3>
+                            </span>
+                            
+                    </p-inplace>
+            </div>
+        </td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+  </ng-template>   
+</p-table>  -->
+
+<div>
+    <h3 style="padding-left: 536px;">Danh sách công việc tuyển dụng</h3>
+<!-- <p-table #dt [columns]="cols" [value]="listJob" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption" >
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns >
+        <tr>
+            <th *ngFor="let col of columns"  [pSortableColumn]="col.field" style="width: 190px" >
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+        <tr>
+            <th *ngFor="let col of columns" [ngSwitch]="col.field" style="width: 100%"  >
+                <input style="width: 150px;" *ngSwitchCase="'idjob'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                <div *ngSwitchCase="'maxSalary'">
+                    Value < {{yearFilter}}
+                    <i class="fa fa-close" (click)="yearFilter=null;dt.filter(null, col.field, col.filterMatchMode)" style="cursor:pointer" *ngIf="yearFilter"></i>
+                    <p-slider [style]="{'width':'100%','margin-top':'8px'}" [(ngModel)]="yearFilter" [min]="0" [max]="11000" (onChange)="onYearChange($event, dt)"></p-slider>
+                </div>
+                <input style="width: 150px;" *ngSwitchCase="'chucDanh'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+                <p-dropdown  *ngSwitchCase="'capBac'" [options]="capBac" [style]="{'width':'50%'}" (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+                <input style="width: 150px;" *ngSwitchCase="'kyNang'" pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          </th>
+        </tr>
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-rowData  let-columns="columns">
+        <tr [pEditableRow]="rowData" *ngIf="rowData.visible!=true"  style="background-color:darkkhaki"  >
+           <td> 
+                {{rowData.idjob}}
+            </td>
+            <td>
+                {{rowData.chucDanh}}
+            </td>
+            <td>
+                {{rowData.capBac}}
+            </td>
+            <td>
+                {{rowData.kyNang}}
+            </td>
+            <td>
+                {{rowData.nganhNghe}}
+            </td>
+            <td>
+                {{rowData.moTa}}
+            </td>
+            <td> 
+                {{rowData.maxSalary}}
+            </td>
+          
+            <td>
+                <button  pButton type="button"  icon="pi pi-pencil" class="ui-button-danger" (click)="Edit(rowData)"></button>
+                <button style="margin-left: 2px;"  pButton type="button"  icon="pi pi-times" class="ui-button-danger" (click)="Visible(rowData)"></button>
+
+                <button  style="margin-left: 2px;margin-left: -33px;" [style.visibility]="x"   pButton type="button"  icon="pi pi-times" class="ui-button-success" (click)="Disible(rowData)"></button>
+                <button style="margin-left: 2px;"   pButton type="button" icon="pi pi-check" class="ui-button-danger" (click)="ViewCandidate(rowData)"></button>
+            </td>
+        </tr>
+        <tr [pEditableRow]="rowData" *ngIf="rowData.visible==true"  >
+           
+                <td> 
+                    {{rowData.idjob}}
+                </td>
+                <td>
+                    {{rowData.chucDanh}}
+                </td>
+                <td>
+                    {{rowData.capBac}}
+                </td>
+                <td>
+                    {{rowData.kyNang}}
+                </td>
+                <td>
+                    {{rowData.nganhNghe}}
+                </td>
+                <td>
+                    {{rowData.moTa}}
+                </td>
+                <td> 
+                    {{rowData.maxSalary}}
+                </td>
+              
+                <td>
+                    <button  pButton type="button"  icon="pi pi-pencil" class="ui-button-danger" (click)="Edit(rowData)"></button>
+                    <button style="margin-left: 2px;"  pButton type="button"  icon="pi pi-times" class="ui-button-danger" (click)="Visible(rowData)"></button>
+                    <button style="margin-left: 2px;"   pButton type="button" icon="pi pi-check" class="ui-button-danger" (click)="ViewCandidate(rowData)"></button>
+                </td>
+        </tr>
+    </ng-template>
+</p-table> -->
+</div>
+<div style="margin-top: -33px;margin-left: 1366px;">
+    <button pButton (click)="Add()" type="button" label="AddJob" ></button>
+</div>
+
+
+<div style="width: 1px;height: 1px;" style="visibility:hidden">
+<app-post-job ng-disabled="true" ></app-post-job>
+</div>
+
+<p-dialog header="Tạo thông báo việc làm" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '1000px'}" [minY]="70" 
+        [maximizable]="true" [baseZIndex]="20000">
+         <app-post-job (suacongViec)="suacongViec($event)" (suaJob)="suaJob($event)" [editJob]="editJob" [congViec]="congViec"  ></app-post-job>
+</p-dialog>
+
+<p-dialog header="Tạo thông báo việc làm" [(visible)]="display1" [modal]="true" [responsive]="true" [style]="{width: '1000px'}" [minY]="70" 
+        [maximizable]="true" [baseZIndex]="20000">
+         <app-post-job (themcongViec)="themcongViec($event)" (addpJob)="AddJob($event)"></app-post-job>
+</p-dialog>
+
+
+<div [style.visibility]="xx"  style="margin-top: -650px" *ngIf="List.length!=0">
+    <h3 style="padding-left: 536px;">Danh sach ung vien nop cho cong viec nay</h3>
+    <app-list-candidate   (Disible)="disible($event)" [viewListCandidate]="List" ></app-list-candidate>
+</div>
+
+
+<div style="margin-top: -873px;">
+<p-table  #dt [columns]="cols1" [value]="ListJob" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption" >
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData  let-columns="columns">
+        <tr [pEditableRow]="rowData" *ngIf="rowData.status==2" >
+            
+           <td> 
+                {{rowData.idJob}}
+            </td>
+            <td>
+                {{rowData.desciption}}
+            </td>
+            <td>
+                {{rowData.title}}
+            </td>
+            <td>
+                {{rowData.maxSalary}}
+            </td>
+            <td>
+                <button  pButton type="button"  icon="pi pi-pencil" class="ui-button-danger" (click)="Sua(rowData)"></button>
+                <button style="margin-left: 2px;"  pButton type="button"  icon="pi pi-times" class="ui-button-danger" (click)="An(rowData)"></button>
+                <button  style="margin-left: 2px;margin-left:3px;"    pButton type="button"  icon="pi pi-times" class="ui-button-success" (click)="XemDanhSach(rowData)"></button>
+            </td>
+        </tr>
+
+      
+         
+        <tr  [pEditableRow]="rowData"  *ngIf="rowData.status==0 || Check(rowData)==true"style="background-color:darkkhaki" >
+                <td> 
+                     {{rowData.idJob}}
+                 </td>
+                 <td>
+                     {{rowData.desciption}}
+                 </td>
+                 <td>
+                     {{rowData.title}}
+                 </td>
+                 <td>
+                     {{rowData.maxSalary}}
+                 </td>
+                 <td>
+                     <button  pButton type="button"  icon="pi pi-pencil" class="ui-button-danger" (click)="Sua(rowData)"></button>
+                     <button style="margin-left: 2px;"  pButton type="button"  icon="pi p-slider" class="ui-button-danger" (click)="Hien(rowData)"></button>
+                     <button  style="margin-left: 2px;margin-left: -33px;" [style.visibility]="x"   pButton type="button"  icon="pi pi-times" class="ui-button-success" (click)="An(rowData)"></button>
+                     <button  style="margin-left: 2px;margin-left: 3px;"    pButton type="button" style="padding-top: 6px;width: 42px; height: 34px;"    (click)="XemDanhSach(rowData)"><i class="fas fa-eye"></i></button>
+                </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+
+
+
+<!-- {{myStr | slice:0:10}} <br/> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+
+
+
+
+
+

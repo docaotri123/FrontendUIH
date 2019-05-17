@@ -1,11 +1,12 @@
 <div class="ui-g login">
   <div class="ui-g-4"></div>
   <div class="ui-g-4 wrap-login">
+    
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
       <div class="ui-g-12 login-logo">
         <span>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe1d9UrC524mr-V1e9NcTD2eav54M43SKpWdNqT3SWj97fGRxkZQ" 
-            alt="Smiley face" height="130" width="130">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe1d9UrC524mr-V1e9NcTD2eav54M43SKpWdNqT3SWj97fGRxkZQ"  -->
+            <!-- alt="Smiley face" height="130" width="130"> -->
         </span>
       </div>
       <div class="ui-g-12">
@@ -16,29 +17,29 @@
       <div class="ui-g-12 login-input">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-              <input type="text" pInputText  ngModel name="username" placeholder="Username">         
+              <input type="text" pInputText  ngModel name="username" placeholder="MSSV">         
           </div>
       </div>
       <div class="ui-g-12 login-input">
           <div class="ui-inputgroup">
               <span class="ui-inputgroup-addon"><i class="fas fa-unlock-alt"></i></span>
-              <input type="text" pInputText  ngModel name="password" placeholder="Password">         
+              <input type="password" pInputText  ngModel name="password" placeholder="Mật khẩu">         
           </div>
       </div>
       <div class="ui-g-12 login-checkbox">
         <div>
-            <p-checkbox name="groupname" label="Remember"></p-checkbox>
+            <p-checkbox name="groupname" label="Nhớ mật khẩu"></p-checkbox>
         </div>
       </div>
       <div class="ui-g-12 login-btn">
-          <button pButton type="submit" label="LOGIN"></button>
+          <button pButton type="submit" label="Đăng nhap"></button>
       </div>
-      <div class="ui-g-12 input-forgot">
+      <!-- <div class="ui-g-12 input-forgot">
         <a href="#">Forgot Password?</a>
       </div>
       <div class="ui-g-12 input-forgot">
           <a href="#">Sign up</a>
-        </div>
+        </div> -->
     </form>
   </div>
 </div>

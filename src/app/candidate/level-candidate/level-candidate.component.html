@@ -1,0 +1,53 @@
+<p-panel>
+
+<div class="ui-g" style="border: 1px solid">
+  <div class="ui-g-12">
+      <div class="ui-g">
+              <i class="fa fa-flag"></i> 
+              <h1 style="margin-top: -6px;margin-left: 10px;">Kỹ năng</h1>
+      </div>
+      <div class="ui-g">
+           <span>Thêm kỹ năng nghề nghiệp đề nhận được những đề nghị công việc phù hợp hơn</span>
+      </div>
+ <form [formGroup]="userform1" (ngSubmit)="onSubmit(userform1.value)">
+      <div class="ui-g">
+                <p-dropdown formControlName="Skill" [options]="ngonNgu" [(ngModel)]="selectedCar"  [showTransitionOptions]="'0ms'"  [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}">
+
+                </p-dropdown>
+              <button type="button" class="btn btn-sm btn-default" id="btn-add-tag">
+                      <i class="fa fa-plus"></i>
+                      
+              </button>
+      </div>
+
+      <div class="ui-g">
+              <div style="margin-left: 750px;margin-top: 10px;">
+                  <button pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                  <button pButton type="submit" label="Lưu" ></button>
+              </div>
+                  
+      </div>
+</form>
+<!-- <div>
+        <p-rating [(ngModel)]="val"></p-rating>
+</div> -->
+
+  </div>
+  <div *ngIf="candidateSkill">
+        <div *ngFor="let person of candidateSkill">
+                {{person.nameSkill}}
+        </div>
+        <!-- <div *ngFor="let x of danhSach">
+                <p-rating readonly="true" [(ngModel)]="x"></p-rating>
+        </div> -->
+ </div>  
+</div>
+<div *ngFor="let person of listSkil">
+        {{person.nameSkill}}
+</div>
+<div *ngFor="let person of ds">
+                {{person.nameSkill}}
+</div>
+</p-panel>
+        
+

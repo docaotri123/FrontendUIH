@@ -1,0 +1,161 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g">
+            <div class="ui-g-1">
+              <a routerLink="/home"><img class="" src="https://images.vietnamworks.com/img/jobseekers/logo.png" alt="Vietnamworks - Job Search, career and employment in Vietnam" title="Vietnamworks - Job Search, career and employment in Vietnam" height="40px"></a>
+             
+            </div>
+            <div class="ui-g-6 xx">
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                      <a routerLink="/home">Home</a>
+                      
+                    </div>
+                    <div class="ui-g-3">
+                      <a href="">Công Ty</a>
+                    </div>
+                    <div class="ui-g-3">
+                      <a href="">Tạo CV</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-5 xx" style="padding-left: 308px;">
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                      <a href="#"><i class="fa fa-globe"></i></a>
+                    </div>
+                    
+                    <div class="ui-g-6" *ngIf="loginService.IsLogged()==false && adminService.IsLogged()==false && candidateService.IsLogged()==false ">
+                      <a  routerLink="/login"><i class ="fas fa-sign-in-alt"></i> Đăng nhập </a>
+                      {{candidateService.getName()}}
+                    </div>
+                    <!-- <div class="ui-g-6" *ngIf="loginServive.getName()">
+                        <h3>Teacher</h3>
+                    </div>
+                    <div class="ui-g-6" *ngIf="adminService.getName()">
+                      <h3>Nhà tuyển dung</h3>
+                    </div> -->
+                    <div *ngIf="loginService.getName()" >
+                      <h3>{{loginService.getName()}}</h3>
+                      <h3>Conponen cua thang Teacher</h3>
+                    </div>
+
+
+                    <div *ngIf="adminService.getName()" >
+                        <h3>Xin chao{{adminService.getName()}}</h3>
+                      <!-- <h3>ConponenNhà tuyển dụng</h3> -->
+                    </div>
+
+                     <!-- <div *ngIf="candidateService.getName()">
+                      <h3>{{adminService.getName()}}</h3>
+                      
+                      <p-button (onClick)="QuanLyHoSo()">Quản lý hồ sơ</p-button><br>
+                      <a routerLink="/candidate">Candidate</a></br>
+                      <p-button (onClick)="ViecLamCuaToi()">Việc làm của tôi</p-button><br>
+                      <p-button (onClick)="ThongBaoViecLam()">Thông báo việc làm</p-button><br>
+                      <p-button (onClick)="UngVien()">Log out</p-button>
+
+                    </div>  -->
+                     
+
+                      <div *ngIf="candidateService.getName()">
+                        <h3>Xin Chào:Huy</h3>
+                        <a routerLink="/candidate/thongTinCaNhan">Quản lý hồ sơ</a>  <br>
+                        <a routerLink="candidate/saveWork">Việc làm của tôi</a>  <br>
+                        <span style="color: cornflowerblue" class="cheked"  (click)="UngVien()">
+                            <label>Đăng xuất</label>
+                        </span>
+                     </div>  
+                  
+                    <div class="ui-g-5" *ngIf="userInfo">
+                      {{userInfo.userName}}
+                      <p-menubar [model]="items">
+                      </p-menubar>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row header"> -->
+  <!--logo-->
+  <!-- <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 logo">
+      <img src="./assets/images/logo.png" height="40px" />
+  </div> -->
+  <!--end logo-->
+
+  <!--menu-->
+  <!-- <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 menu">
+      <ul>
+          <li>
+              <a href="#">All Jobs</a>
+          </li>
+          <li>
+              <a href="#">Management Jobs
+                  <span class="hot">HOT</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">Companies</a>
+          </li>
+          <li>
+              <a href="#">Wow CV</a>
+          </li>
+          <li>
+              <a href="#">Learning
+                  <span class="new">NEW</span>
+              </a>
+          </li>
+          <li>
+              <a href="#">HR Insider</a>
+          </li>
+
+      </ul>
+  </div> -->
+  <!--end menu-->
+
+  <!--header-right-->
+  <!-- <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4 header-right">
+      <ul>
+          <li>
+              <a href="#">
+                  <img src="./assets//images/vn.png" width="24" />
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="fa fa-bell bell"></span>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="fa fa-sign-in login"></span>Log In</a>
+          </li>
+          <li>
+              <a href="#">Register</a>
+          </li>
+          <li>
+              <a href="#">
+                  <span class="e">EMPLOYERS</span>
+                  <span class="p">Post Jobs & Find Talents</span>
+              </a>
+          </li>
+
+      </ul>
+  </div> -->
+
+  <!--end header-right-->
+<!-- </div> -->
+
+

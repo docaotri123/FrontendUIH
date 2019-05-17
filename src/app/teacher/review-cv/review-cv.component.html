@@ -1,0 +1,21 @@
+<a [routerLink]="['../ketqua',15039131]">Kết quả học tập</a>
+<a [routerLink]="['../xemCV']">Xem CV</a>
+<a [routerLink]="['../hethongdanhgia']">Hệ thống đánh giá</a>
+<div>
+  <div *ngIf="check==true">
+     <img style="margin-left: 327px;width: 100px;height: 100px" src="https://cdn1.vectorstock.com/i/1000x1000/62/45/green-circle-check-mark-confirmation-tick-marks-vector-21826245.jpg">
+  </div>
+<p>
+  <img style="width: 800px;height: 800px;margin-left: 422px;" src="https://i1.wp.com/www.topcv.vn/v3/images/seo/cv-la-gi-hinh-1.png?w=696">
+</p>
+<div> 
+  <div class="ui-g">
+      <textarea [(ngModel)]="nhanXet"   [style.visibility]="h" pInputTextarea style="width: 849px;height: 100px;;" name="first"></textarea>
+  </div>
+<div class="ui-g-3" style="margin-left: 246px;">
+      <div>
+          <p-button  (click)="XacNhan()"  label="Xác nhận"></p-button>
+      </div>
+</div>
+</div>
+</div>

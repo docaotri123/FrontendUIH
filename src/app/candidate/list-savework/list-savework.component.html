@@ -1,0 +1,36 @@
+<a [routerLink]="['../thongTinCaNhan']">Thông tin cá nhân</a>
+<a [routerLink]="['../saveWork']">Việc làm của tôi</a>
+<a [routerLink]="['../viewCV']">Xem CV</a>
+<br>
+<a [routerLink]="['../saveWork']">Công việc đã lưu</a>
+<a [routerLink]="['../applywork']">Công việc đã ứng tuyển</a>
+  <!-- <div class="ui-g">
+  <div class="ui-g-12">
+      <div class="ui-g">
+          <div class="ui-g-12">
+                  <div *ngFor="let item of listJob">
+                      <div class="ui-g-12">
+                            <app-save-work  (deleteJob)="delete($event)" [saveWork]="item" (xoa)="parentXoa($event)"></app-save-work>
+                      </div>
+                  </div>
+          </div>
+      </div>
+  </div>
+</div> 
+<p>Componen {{name}}</p> 
+<h3>cccccccccccccccc</h3> -->
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                    <div *ngFor="let item of listJob1">
+                        <div class="ui-g-12">
+                              <app-save-work  (deleteJob)="delete($event)" [saveWork]="item" (xoa)="parentXoa($event)"></app-save-work>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div> 
+

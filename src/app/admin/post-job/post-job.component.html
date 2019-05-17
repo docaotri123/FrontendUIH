@@ -1,0 +1,610 @@
+<!-- <div *ngIf="!editJob" >
+<form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" >
+<div class="ui-g">
+  <div class="ui-g-12 ">
+    <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Chức danh</h3>
+        </div>
+        <div class="ui-g-3">
+          <span class="ui-float-label">
+            <input formControlName="ChucDanh" id="float-input" type="text" size="100" pInputText> 
+            <label for="float-input">Username</label>
+        </span>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng nhập chức danh" *ngIf="!userform.controls['ChucDanh'].valid&&userform.controls['ChucDanh'].dirty"></p-message>
+        </div>
+        </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Cấp bậc</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-dropdown formControlName="CapBac" [options]="capbac" [(ngModel)]="selectedCar"  [showTransitionOptions]="'0ms'"  [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}">
+
+        </p-dropdown>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn cấp bậc" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Kỹ năng</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-multiSelect formControlName="KyNang" [options]="kynang" [(ngModel)]="selectedCars3" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}"></p-multiSelect>
+        <p>Kỹ năng: {{selectedCars3}}</p>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn kỹ năng" *ngIf="!userform.controls['KyNang'].valid&&userform.controls['KyNang'].dirty"></p-message>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Ngành nghề</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-dropdown formControlName="NganhNghe" [options]="nganhnghe" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>
+      
+      </div>
+      <div style="margin-top: 1px">
+        <p-message severity="error" text="Vui lòng chọn ngành nghề" *ngIf="!userform.controls['NganhNghe'].valid&&userform.controls['NganhNghe'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Nơi làm việc</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-multiSelect formControlName="NoiLamViec" [options]="diadiem" [(ngModel)]="selectedCars2" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+        <p>Nơi làm việc: {{selectedCars2}}</p>
+      </div>
+      <div style="margin-top: 70px;margin-left: -357px;">
+        <p-message severity="error" text="Vui lòng chọn địa điểm" *ngIf="!userform.controls['NoiLamViec'].valid&&userform.controls['NoiLamViec'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Mức lương</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-dropdown formControlName="minSalary" [options]="minSalary" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>       
+      </div>
+      <div style="margin-top: 1px">
+        <p-message severity="error" text="Vui lòng chọn tiền lương" *ngIf="!userform.controls['minSalary'].valid&&userform.controls['minSalary'].dirty"></p-message>
+      </div>
+      <div class="ui-g-3">
+        <p-dropdown formControlName="maxSalary" [options]="maxSalary" [(ngModel)]="selectedCar1" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>
+      </div>
+      <div style="margin-top: 1px">
+        <p-message severity="error" text="Vui lòng chọn tiền lương" *ngIf="!userform.controls['maxSalary'].valid&&userform.controls['maxSalary'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Mô tả</h3>
+      </div>
+      <div class="ui-g-3">
+        <textarea formControlName="moTa" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+      </div>
+      <div style="margin-top: 120px;margin-left: -357px;">
+        <p-message severity="error" text="Vui lòng nhập mô tả" *ngIf="!userform.controls['moTa'].valid&&userform.controls['moTa'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Yêu cầu công việc</h3>
+      </div>
+      <div class="ui-g-3">
+        <textarea formControlName="yeuCau" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+      </div>
+      <div style="margin-top: 120px;margin-left: -357px;">
+        <p-message severity="error" text="Vui lòng nhập yêu cầu công việc" *ngIf="!userform.controls['yeuCau'].valid&&userform.controls['yeuCau'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Nhận hồ sơ băng ngôn ngữ</h3>
+      </div>
+      <div class="ui-g-3">
+        <p-dropdown formControlName="hoSo" [options]="language" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>       
+      </div>
+      <div style="margin-top: 1px">
+        <p-message severity="error" text="Vui lòng chọn yêu cầu hồ sơ" *ngIf="!userform.controls['hoSo'].valid&&userform.controls['hoSo'].dirty"></p-message>
+      </div>
+    </div>
+
+    <div class="ui-g">
+      <div class="ui-g-2">
+          <h3>Người liên hệ</h3>
+      </div>
+      <div class="ui-g-3">
+          <span class="ui-float-label">
+            <input formControlName="lienHe" id="float-input" type="text" size="100" pInputText> 
+            <label for="float-input">Người liên hệ</label>
+          </span>
+      </div>
+      <div style="margin-top: 41px;margin-left: -357px;">
+        <p-message severity="error" text="Vui lòng chọn người liên hệ" *ngIf="!userform.controls['lienHe'].valid&&userform.controls['lienHe'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">  
+        <div class="ui-g" style="margin-left: 500px;">
+            <p-button (click)="onSubmit()"  [disabled]="!userform.valid"  type="submit" label="Lưu bài đăng" style="margin-right: 10px;"></p-button>
+            <p-button label="Hủy"></p-button>
+        </div>  
+    </div>
+  </div>
+</div>
+</form>
+</div> -->
+
+
+
+
+
+<!-- <div *ngIf="editJob">
+  <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" >
+    <div class="ui-g">
+      <div class="ui-g-12 ">
+        <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Chức danh</h3>
+            </div>
+            <div class="ui-g-3">
+              <span class="ui-float-label">
+                <input formControlName="ChucDanh" value="{{editJob.chucDanh}}" id="float-input" type="text" size="100" pInputText> 
+            </span>
+            </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Cấp bậc</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-dropdown placeholder="{{editJob.capBac}} "   formControlName="CapBac"  [options]="capbac1" [style]="{'width':'300px'}" [(ngModel)]="selectedCity1">
+          
+            </p-dropdown>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Kỹ năng</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-multiSelect  defaultLabel="{{editJob.kyNang}}" formControlName="KyNang" [options]="kynang" [(ngModel)]="selectedCars3" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}">
+
+            </p-multiSelect>
+            <p>Kỹ năng: {{selectedCars3}}</p>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Ngành nghề</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-dropdown placeholder="{{editJob.nganhNghe}} "   formControlName="NganhNghe" [options]="nganhnghe1" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>
+          
+          </div>
+          <p-dropdown placeholder="{{editJob.nganhNghe}} "   formControlName="NganhNghe" [options]="nganhnghe1" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Nơi làm việc</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-multiSelect defaultLabel="{{editJob.noiLamViec}}"  formControlName="NoiLamViec" [options]="diadiem" [(ngModel)]="selectedCars4" [panelStyle]="{minWidth:'12em'}">
+
+            </p-multiSelect>
+            <p>Nơi làm việc: {{selectedCars4}}</p>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Mức lương</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-dropdown placeholder="{{editJob.minSalary}} "  formControlName="minSalary" [options]="minSalary1" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>       
+          </div>
+          <div class="ui-g-3">
+            <p-dropdown  placeholder="{{editJob.maxSalary}} "  formControlName="maxSalary" [options]="maxSalary1" [(ngModel)]="selectedCar1" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>
+          </div>
+          <div style="margin-top: 1px">
+            <p-message severity="error" text="Vui lòng chọn tiền lương" *ngIf="!userform.controls['maxSalary'].valid&&userform.controls['maxSalary'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Mô tả</h3>
+          </div>
+          <div class="ui-g-3">
+            <textarea placeholder="{{editJob.moTa}} "  formControlName="moTa" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Yêu cầu công việc</h3>
+          </div>
+          <div class="ui-g-3">
+            <textarea  placeholder="{{editJob.yeuCauCongViec}} "  formControlName="yeuCau" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Nhận hồ sơ băng ngôn ngữ</h3>
+          </div>
+          <div class="ui-g-3">
+            <p-dropdown placeholder="{{editJob.hoSo}} "   formControlName="hoSo" [options]="language1" [(ngModel)]="selectedCar" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>       
+          </div>
+        </div>
+    
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Người liên hệ</h3>
+          </div>
+          <div class="ui-g-3">
+              <span class="ui-float-label">
+                <input placeholder="{{editJob.lienHe}} "   formControlName="lienHe" id="float-input" type="text" size="100" pInputText> 
+              
+              </span>
+          </div>
+        </div>
+        <div class="ui-g">  
+            <div class="ui-g" style="margin-left: 500px;">
+                <p-button (click)="Edit()"  type="button" label="Sửa bài đăng" style="margin-right: 10px;"></p-button>
+                <p-button label="Hủy"></p-button>
+            </div>  
+        </div>
+      </div>
+    </div>
+    </form>
+</div> -->
+
+
+
+<form [formGroup]="userform1" *ngIf="congViec"  >
+    <div class="ui-g">
+        <div class="ui-g-12">
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Tiêu đề</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input value="{{congViec.title}}"    formControlName="TieuDe" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Mô tả</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.moTa}}"   formControlName="MoTa" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Maxsalary</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.maxSalary}}"   formControlName="maxSalary" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Minsalary</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.minSalary}}"   formControlName="minSalary" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Start Date</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <p-calendar  [(ngModel)]="date3"  formControlName="startDate" [showIcon]="true"></p-calendar>
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Start Date</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <p-calendar  [(ngModel)]="date3"  formControlName="endDate" [showIcon]="true"></p-calendar>
+                </span>
+            </div>
+          </div>
+
+         
+
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Yeu cau</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.yeuCau}}"   formControlName="yeuCau" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Loi ich</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.loiIch}}"   formControlName="loiIch" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+          <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Quyen Loi</h3>
+            </div>
+            <div class="ui-g-3">
+                <span class="ui-float-label">
+                  <input  value="{{congViec.quyenLoi}}"   formControlName="quyenLoi" id="float-input" type="text" size="100" pInputText> 
+                </span>
+            </div>
+          </div>
+
+
+          
+
+
+
+
+          <div class="ui-g">
+              <div class="ui-g-4">
+                <p-button (click)="Sua()"  type="button" label="Sửa bài đăng" style="margin-right: 10px;"></p-button>
+              </div>
+          </div>
+        </div>
+    </div>
+    {{congViec.maxSalary}}
+    {{congViec.minSalary}}
+    {{congViec.moTa}}
+    {{congViec.title}}
+    {{congViec.starDate}}
+    {{congViec.endDate}}
+    {{congViec.yeuCau}}
+    {{congViec.quyenLoi}}
+    {{congViec.loiIch}}
+
+</form>
+
+
+
+
+<div *ngIf="!congViec">
+  <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+  <div class="ui-g">
+    <div class="ui-g-12 ">
+
+        <div class="ui-g">
+            <div class="ui-g-2">
+                <h3>Tieu de</h3>
+            </div>
+            <div class="ui-g-3">
+              <span class="ui-float-label">
+                <input formControlName="TieuDe" id="float-input" type="text" size="100" pInputText> 
+              </span>
+            <div style="margin-top: 1px">
+              <p-message severity="error" text="Vui lòng nhập tieu de" *ngIf="!userform.controls['TieuDe'].valid&&userform.controls['TieuDe'].dirty"></p-message>
+            </div>
+            </div>
+        </div>
+
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Chức danh</h3>
+          </div>
+          <div class="ui-g-3">
+            <span class="ui-float-label">
+              <input formControlName="ChucDanh" id="float-input" type="text" size="100" pInputText> 
+              <label for="float-input">Username</label>
+          </span>
+          <div style="margin-top: 1px">
+            <p-message severity="error" text="Vui lòng nhập chức danh" *ngIf="!userform.controls['ChucDanh'].valid&&userform.controls['ChucDanh'].dirty"></p-message>
+          </div>
+          </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Cấp bậc</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-dropdown formControlName="CapBac" [options]="capbac" [(ngModel)]="selectedCar"  [showTransitionOptions]="'0ms'"  [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}">
+  
+          </p-dropdown>
+          <div style="margin-top: 1px">
+            <p-message severity="error" text="Vui lòng chọn cấp bậc" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Kỹ năng</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-multiSelect formControlName="KyNang" [options]="kynang" [(ngModel)]="selectedCars3" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}"></p-multiSelect>
+          <p>Kỹ năng: {{selectedCars3}}</p>
+          <div style="margin-top: 1px">
+            <p-message severity="error" text="Vui lòng chọn kỹ năng" *ngIf="!userform.controls['KyNang'].valid&&userform.controls['KyNang'].dirty"></p-message>
+          </div>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Ngành nghề</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-dropdown formControlName="NganhNghe" [options]="nganhnghe" [(ngModel)]="selectedCar2" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>
+        
+        </div>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn ngành nghề" *ngIf="!userform.controls['NganhNghe'].valid&&userform.controls['NganhNghe'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Nơi làm việc</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-multiSelect formControlName="NoiLamViec" [options]="diadiem" [(ngModel)]="selectedCars4" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+          <p>Nơi làm việc: {{selectedCars2}}</p>
+        </div>
+        <div style="margin-top: 70px;margin-left: -357px;">
+          <p-message severity="error" text="Vui lòng chọn địa điểm" *ngIf="!userform.controls['NoiLamViec'].valid&&userform.controls['NoiLamViec'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Mức lương</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-dropdown formControlName="minSalary" [options]="minSalary" [(ngModel)]="selectedCar5" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>       
+        </div>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn tiền lương" *ngIf="!userform.controls['minSalary'].valid&&userform.controls['minSalary'].dirty"></p-message>
+        </div>
+        <div class="ui-g-3">
+          <p-dropdown formControlName="maxSalary" [options]="maxSalary" [(ngModel)]="selectedCar6" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'"></p-dropdown>
+        </div>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn tiền lương" *ngIf="!userform.controls['maxSalary'].valid&&userform.controls['maxSalary'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Mô tả</h3>
+        </div>
+        <div class="ui-g-3">
+          <textarea formControlName="moTa" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+        <div style="margin-top: 120px;margin-left: -357px;">
+          <p-message severity="error" text="Vui lòng nhập mô tả" *ngIf="!userform.controls['moTa'].valid&&userform.controls['moTa'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Yêu cầu công việc</h3>
+        </div>
+        <div class="ui-g-3">
+          <textarea formControlName="yeuCau" [rows]="5" [cols]="100" pInputTextarea autoResize="autoResize"></textarea>
+        </div>
+        <div style="margin-top: 120px;margin-left: -357px;">
+          <p-message severity="error" text="Vui lòng nhập yêu cầu công việc" *ngIf="!userform.controls['yeuCau'].valid&&userform.controls['yeuCau'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Loi ich</h3>
+          </div>
+          <div class="ui-g-3">
+            <span class="ui-float-label">
+              <input formControlName="loiIch" id="float-input" type="text" size="100" pInputText> 
+           
+          </span>
+          <div style="margin-top: 1px">
+            <p-message severity="error" text="Vui lòng nhập chức danh" *ngIf="!userform.controls['loiIch'].valid&&userform.controls['loiIch'].dirty"></p-message>
+          </div>
+          </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Nhận hồ sơ băng ngôn ngữ</h3>
+        </div>
+        <div class="ui-g-3">
+          <p-dropdown formControlName="hoSo" [options]="language" [(ngModel)]="selectedCar7" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}"></p-dropdown>       
+        </div>
+        <div style="margin-top: 1px">
+          <p-message severity="error" text="Vui lòng chọn yêu cầu hồ sơ" *ngIf="!userform.controls['hoSo'].valid&&userform.controls['hoSo'].dirty"></p-message>
+        </div>
+      </div>
+
+      
+  
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Người liên hệ</h3>
+        </div>
+        <div class="ui-g-3">
+            <span class="ui-float-label">
+              <input formControlName="lienHe" id="float-input" type="text" size="100" pInputText> 
+              <label for="float-input">Người liên hệ</label>
+            </span>
+        </div>
+        <div style="margin-top: 41px;margin-left: -357px;">
+          <p-message severity="error" text="Vui lòng chọn người liên hệ" *ngIf="!userform.controls['lienHe'].valid&&userform.controls['lienHe'].dirty"></p-message>
+        </div>
+      </div>
+      <div class="ui-g">  
+          <div class="ui-g" style="margin-left: 500px;">
+              <p-button [disabled]="!userform.valid"  type="submit" label="Lưu bài đăng" style="margin-right: 10px;"></p-button>
+              <p-button label="Hủy"></p-button>
+          </div>  
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+
+
+<!-- <form [formGroup]="userform1" *ngIf="!congViec" >
+  <div class="ui-g">
+      <div class="ui-g-12">
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Tiêu đề</h3>
+          </div>
+          <div class="ui-g-3">
+              <span class="ui-float-label">
+                <input formControlName="MoTa" id="float-input" type="text" size="100" pInputText> 
+              </span>
+          </div>
+        </div>
+
+        <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Mô tả</h3>
+          </div>
+          <div class="ui-g-3">
+              <span class="ui-float-label">
+                <input  formControlName="TieuDe" id="float-input" type="text" size="100" pInputText> 
+              </span>
+          </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-4">
+              <p-button (click)="Them()" [disabled]="!userform1.valid"   type="button" label="Them bai dang" style="margin-right: 10px;"></p-button>
+            </div>
+        </div>
+      </div>
+  </div>
+</form>
+
+  -->

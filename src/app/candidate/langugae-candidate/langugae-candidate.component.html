@@ -1,0 +1,87 @@
+
+<!-- <form   [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" >
+<div class="ui-g" style="border: 1px solid">
+  <div class="ui-g-12">
+      <div class="ui-g">
+              <i class="fa fa-flag"></i> 
+              <h1 style="margin-top: -6px;margin-left: 10px;">Ngoại ngữ</h1>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+              <strong>Ngoại ngữ</strong>
+          </div>
+          <div class="ui-g-6">
+              <strong>Trình độ</strong>
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+                  <p-dropdown [style.visibility]="x" formControlName="ngonNgu"  name="input1"  [options]="language" [(ngModel)]="selectedCity1"></p-dropdown>
+                  <label [style.visibility]="y" style="margin-left: -170px;"> {{val0}}</label>
+                  
+          </div>
+          <div class="ui-g-6">
+              <div class="ui-g">
+                      <div class="ui-g-2" style="float: left;">
+                          <p-radioButton [style.visibility]="x" formControlName="trinhDo"  name="group1" [(ngModel)]="val1"   value="Sơ cấp" label="Sơ cấp" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+                      </div>
+                      <div class="ui-g-2" style="float: left;">
+                             <p-radioButton [style.visibility]="x" formControlName="trinhDo"   name="group1" [(ngModel)]="val1"  value="Trung cấp" label="Trung cấp" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                      </div>
+                      <div class="ui-g-2" style="float: left;">
+                              <p-radioButton [style.visibility]="x" formControlName="trinhDo"   name="group1" [(ngModel)]="val1"   value="Cao cấp" label="Cao cấp" [(ngModel)]="val1" inputId="opt3"></p-radioButton>
+                      </div>
+                      <div class="ui-g-2" style="float: left;">
+                              <p-radioButton [style.visibility]="x" formControlName="trinhDo"  name="group1" [(ngModel)]="val1"  value="Bản ngữ" label="Bản ngữ" [(ngModel)]="val1" inputId="opt4"></p-radioButton>
+                      </div> 
+                      <label [style.visibility]="y" style="margin-left: -465px;">{{val1}}</label>
+                      
+              </div>
+          </div>
+      </div>
+      <div class="ui-g">
+              <div style="margin-left: 750px;margin-top: 10px;">
+                  <button [style.visibility]="x" pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                  <button [style.visibility]="x" pButton type="submit" label="Lưu" ></button>
+                  <div style="margin-top: -33px;margin-left: 61px;">
+                    <button pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+                  </div>
+             </div>
+
+      </div>
+  </div>
+</div>
+</form> -->
+<p-panel>
+<form  [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)" >
+    
+    <div class="ui-g">
+                <i class="fa fa-flag"></i> 
+                <h1 style="margin-top: -6px;margin-left: 10px;">Ngoại ngữ</h1>
+    </div>
+    <div class="ui-g">
+            <p-dropdown formControlName="ngonNgu" [options]="language" [(ngModel)]="selectedCar"  [showTransitionOptions]="'0ms'"  [hideTransitionOptions]="'0ms'" [style]="{'width':'750px'}">
+            </p-dropdown>
+            <button type="button" class="btn btn-sm btn-default" id="btn-add-tag">
+                    <i class="fa fa-plus"></i>
+            </button>
+    </div>
+
+    <div class="ui-g">
+            <div style="margin-left: 750px;margin-top: 10px;">
+                <button pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                <button pButton type="submit" label="Lưu" ></button>
+            </div>
+                
+    </div>
+</form>
+<div>
+        <p-rating [(ngModel)]="val"></p-rating>
+</div>
+<div *ngFor="let person of candidateLanguage">
+    {{person.nameLanguage}}
+   
+
+    <p-rating readonly="true" [(ngModel)]="person.sao"></p-rating>
+</div>
+</p-panel>

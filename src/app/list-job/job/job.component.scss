@@ -1,0 +1,55 @@
+.hot-job-badge{
+    background-color: #fd7c7d;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    position: relative;
+    margin-top: -52px;
+    margin-left: 585px;
+}
+.logo-box
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 258px;
+}
+.detail
+{
+    position: absolute;
+    margin-top: -57px;
+    margin-left: 32px;
+}
+.job-title
+{
+    font-size: 25px;
+    color: aqua;
+    margin-top: 47px;
+}
+
+.job-title-bottom{
+    font-size: 18px;
+    margin-top: -20px;
+}
+.tabs-container
+{
+    border: 1px solid #f2f2f2;
+    background:cornsilk;
+    padding: 35px 40px 80px;
+}
+.logo-box img{
+    width: 50px;
+    height: 50px;;
+}

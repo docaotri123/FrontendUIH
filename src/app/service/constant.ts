@@ -1,0 +1,37 @@
+const url = 'https://localhost:44316';
+export const urlLogin = `${url}/api/auth/login`;
+export const urlSearchJobs = `${url}/api/searchJobs`;
+export const urlGetJobs = `${url}/api/getJobs`;
+export const urlEditJobs = `${url}/api/editJobs`;
+
+export const urlAddJobs = `${url}/api/addJobs`;
+export const urlAddJob = `${url}/api/addJob`;
+
+export const urlDisibleJobs = `${url}/api/disibleJobs`;
+export const urlVisibleJobs = `${url}/api/visibleJobs`;
+export const urlGetCandidate = `${url}/api/getCandidate`;
+export const urlGetUserJob = `${url}/api/getUserJob`;
+export const urlSaveJob = `${url}/api/saveJob`;
+export const Login = `${url}/ap/LOG`;
+export const urlCheckSaveJob = `${url}/api/checkSaveJob`;
+export const urlCheckApplyJob = `${url}/api/checkApplyJob`;
+export const urlApplyJob = `${url}/api/applyJob`;
+export const urlUnCheckSaveJob = `${url}/api/unCheckSaveJob`;
+export const urlfindJob = `${url}/api/findJob`;
+export const urlGetInfoCandidate = `${url}/api/getInfoCandidate`;
+export const urlAddInfoCandidate = `${url}/api/AddInforCandidate`;
+export const urlGetSaveJob = `${url}/api/getSaveJob`;
+export const urlGetApplyJob = `${url}/api/getApplyJob`;
+export const urlCandidate = `${url}/api/candidate`;
+export const urlget_Skill = `${url}/api/getSkill`;
+export const urladd_Skill = `${url}/api/addSkill`;
+export const urlCandidate_Skill = `${url}/apiCandidate/getSkill`;
+export const urlAdd_Skill = `${url}/apiCandidate/addSkill`;
+export const urlCandidate_Language = `${url}/apiCandidate/getLanguage`;
+export const urladd_Language = `${url}/apiCandidate/addLanguage`;
+export const urlget_Experience = `${url}/apiCandidate/getExperience`;
+export const urlReviewCV = `${url}/apiCandidate/reviewCV`;
+export const urlcheckDanhGia = `${url}/apiCandidate/checkDanhGia`;
+export const urlupdateCV = `${url}/apiCandidate/updateCV`;
+export const urlgetCV = `${url}/apiCandidate/getCV`;
+export const urlgetImgCV = `${url}/apiCandidate/getImageCV`;

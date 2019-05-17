@@ -1,0 +1,34 @@
+<div *ngFor="let item of listJob">
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <div class="ui-g">
+                <div class="ui-g-1">
+                        
+                </div>
+                <div class="ui-g-10">
+                    <div class="ui-g">
+                        <div class="ui-g-12" style="background-color: dodgerblue;height: 100px;;">
+                                <app-panel-job [item]="item"></app-panel-job>
+                        </div>
+                    </div>
+                    <div class="ui-g">
+                        <div class="ui-g-12" style="padding-top:100px">
+                                <app-info-job  [item1]="item"></app-info-job>
+                                <div class="desciption" style="padding-top:96px;margin-left: 721px;">
+                                     <app-description-job></app-description-job>
+                                </div>
+                                <div class="desciption1" style="margin-top: -417px;margin-left: 721px;">
+                                    <app-similar-job></app-similar-job> 
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-1">
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

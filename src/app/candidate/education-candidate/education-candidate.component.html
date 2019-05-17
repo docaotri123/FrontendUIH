@@ -1,0 +1,65 @@
+<div class="ui-g" style="border: 1px solid">
+  <div class="ui-g-12">
+      <div class="ui-g">
+          <i class="fa fa-flag"></i> 
+          <h1 style="margin-top: -6px;margin-left: 10px;">Chuyên ngành</h1>
+      </div>
+      <div class="ui-g">
+              <label><strong class="text-red">*</strong>Chuyên ngành</label>
+      </div>
+      <div class="ui-g"  style="margin-top: 15px">
+              <span class="ui-float-label">
+                      <input [style.visibility]="x" [(ngModel)]="cn"  id="float-input" type="text" size="30" pInputText> 
+                      <label [style.visibility]="x" for="float-input">Ví dụ:Kỹ thuật phần mềm</label>
+                        
+                </span>
+                <label [style.visibility]="y" style="margin-left:-248px;">{{cn}}</label>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+              <label><strong  class="text-red">*</strong>Trường</label>
+          </div>
+          <div class="ui-g-3">
+              <label><strong class="text-red">*</strong>Bằng cấp</label>
+          </div>
+      </div>
+      <div class="ui-g">
+              <div class="ui-g-3">
+                      <span class="ui-float-label">
+                              <input [style.visibility]="x" [(ngModel)]="truong"   id="float-input" type="text" size="30" pInputText> 
+                              <label [style.visibility]="x" for="float-input">Trường:Đại học công nghiệp</label>
+                              
+                      </span>
+                      <div style="margin-top: -31px;">
+
+                      <label [style.visibility]="y"  >{{truong}}</label>
+                      </div>
+                      
+              </div>
+              <div class="ui-g-3">
+                      <p-dropdown [style.visibility]="x"   [options]="bangCap" [(ngModel)]="bc"></p-dropdown>
+             </div>
+             <div>
+                <label [style.visibility]="y"  style="margin-left:-344px;"> {{bc ?bc.name :'none'}}  </label>
+             </div>
+      </div>
+      <div class="ui-g">
+              <label><strong class="text-red">*</strong>Thành tưu</label>
+      </div>
+      <div class="ui-g">
+              <textarea  [style.visibility]="x" [(ngModel)]="tt" pInputTextarea style="width: 863px;height: 100px;;"></textarea>
+              <label [style.visibility]="y" style="margin-left: -862px;">{{tt}}</label>
+      </div>
+      <div class="ui-g">
+              <div style="margin-left:750px;margin-top: 10px;">
+                      <button [style.visibility]="x" pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                      <button [style.visibility]="x" pButton (click)="onClick()" type="button" label="Lưu" ></button>
+                      <div style="margin-top: -33px;margin-left: 61px;">
+                        <button [style.visibility]="y" pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+                      </div>
+              </div>
+      </div>
+
+  </div>
+</div>
+

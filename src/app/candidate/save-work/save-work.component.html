@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()">
+<div class="ui-g">
+  <div class="ui-g-12">
+      <div class="ui-g">
+          <div class="ui-g-3" style="margin-top: -10px;padding-left: 200px;">
+                  <a data-item-id="1080993" href="https://www.vietnamworks.com/tuyen-gap-02-it-business-analyst-lam-viec-tai-ha-noi-1-1080993-jv/?utm_source=vnw_homepage&amp;utm_medium=HotJob&amp;utm_campaign=HotJob&amp;source=homePage" target="_blank" title="Việc làm - Tuyển Gấp 02 IT Business Analyst Làm Việc Tại Hà Nội - Yumeshin Vietnam - Hà Nội" tabindex="0">
+                      <img src="https://ih1.redbubble.net/image.416412087.0587/mp,840x830,matte,f8f8f8,t-pad,750x1000,f8f8f8.jpg" class="img-responsive logo" id="topjob-logo-1080993"     alt="Tuyển Gấp 02 IT Business Analyst Làm Việc Tại Hà Nội" style="width: 100px;height: 100px;" >
+                  </a>
+          </div>
+          <div class="ui-g-5" style="margin-top: -50px;">
+                  <p class="job-title">
+                          {{saveWork.title}}   
+                  </p>
+                    <div class="job-title-bottom">
+                        <span>{{saveWork.level}}</span>
+                        <span class="hidden-xs">-</span>
+                        <span class="location hidden-xs">{{saveWork.location}}</span>
+                        <span class="hot-job-badge">Hot</span>
+                    </div>
+          </div>
+          <div class="ui-g-1">
+                  <div class="text-light">Ngày hết hạn<span class="hidden-md hidden-lg m-r-xs">:</span></div>
+                  <div class="text-strong">{{saveWork.endDate}}</div>
+          </div>
+          <div class="ui-g-3">
+                  <button pButton type="button" style="margin-right: 5px;" label="Ưng tuyển" ></button>
+                  <button pButton   type="submit" label="Xóa" ></button>
+          </div>
+      </div>
+  </div>
+</div> 
+</form>

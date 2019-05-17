@@ -1,0 +1,51 @@
+<a [routerLink]="['../../../detail',id,idJob]">Xem thong tin </a>
+<a [routerLink]="['../../../viewCV',id,idJob]">Xem CV</a>
+<a [routerLink]="['../../../history',id,idJob]">Xem lịch sử ứng tuyển</a>
+<h3>Xem lich su ung tuyen</h3>
+
+<!-- {{ListUserJob.length}}
+<div *ngFor="let item of ListUserJob">
+    <h3>{{item.title}}</h3>
+</div> -->
+
+<div *ngIf="ListUserJob" >
+    <p-table #dt1 [columns]="colsJob" [value]="ListUserJob" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="caption">
+            <div style="text-align: right">        
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt1.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            </div>
+        </ng-template>
+
+
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                     <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                           {{col.header}}
+                       <p-sortIcon [field]="col.field"></p-sortIcon>
+                     </th>
+             </tr>
+        </ng-template>
+
+        
+        <ng-template ng-template pTemplate="body" let-rowData  let-columns="columns">
+            <tr [pEditableRow]="rowData"  >
+              <td> 
+                  {{rowData.idJob}}
+              </td>
+              <td>
+                  {{rowData.title}}
+              </td>
+              <td>
+                  {{rowData.skill}}
+              </td>
+              <td>
+                  {{rowData.positions}}
+              </td>
+          </tr>
+        </ng-template>
+    </p-table>
+
+</div>
+
+<a [routerLink]="['../../../danhsach',idJob]">Back</a>

@@ -1,0 +1,312 @@
+ <!-- <div class="ui-g" style="border: 1px solid">
+    <div class="ui-g-12">
+      <div class="ui-g-3">
+        <h1 style="margin-top:-10px;">Thông tin cá nhân</h1>
+          <img style="width: 200px;height: 200px;margin-top: 0px;">
+      </div>
+      <div class="ui-g-9">
+        <div class="ui-g">
+            <div class="ui-g-3">
+                  <h3>Họ</h3>
+            </div>
+            <div class="ui-g-3">
+              <h3>Tên</h3>
+            </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3 xx">
+            <input type="text" pInputText placeholder="Họ" style="width: 200px;margin-right: 5px;">
+          </div>
+          <div class="ui-g-3 xx">
+            <input type="text"  pInputText placeholder="Tên" style="width: 200px;margin-right: 5px;">
+          </div>
+        </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+                <h3>Chức danh</h3>
+          </div>
+          <div class="ui-g-3">
+            <h3>Cấp bậc hiện tại</h3>
+          </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-3 xx">
+          <input type="text"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+        </div>
+        <div class="ui-g-3" style="margin-top:-26px;">
+          <p-dropdown  [options]="capBac"></p-dropdown>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-3">
+              <h3>Số năm kinh nghiệm</h3>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-3 xx">
+          <input type="text" pInputText placeholder="Số năm kinh nghiệm" style="width:471px;;margin-right: 5px;">
+        </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-3" style="margin-left:376px;">
+          
+          <button pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+          <button pButton type="button" label="Lưu" ></button>
+        </div>
+      </div>
+      </div>
+    </div>
+</div> 
+
+ -->
+<!-- 
+<form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)">
+  <div class="ui-g" style="border: 1px solid">
+     <div class="ui-g-12">
+       <div class="ui-g-3">
+         <h1 style="margin-top:-10px;">Thông tin cá nhân</h1>
+           <img style="width: 200px;height: 200px;margin-top: 0px;">
+       </div>
+       <div class="ui-g-9">
+         <div class="ui-g">
+             <div class="ui-g-3">
+                   <h3>Họ</h3>
+             </div>
+             <div class="ui-g-3">
+               <h3>Tên</h3>
+             </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3 xx">
+             <input type="text" formControlName="Ho" pInputText placeholder="Họ" style="width: 200px;margin-right: 5px;">
+             <div style="margin-top: 2px;">
+              <p-message severity="error" text="Vui lòng nhập Họ" *ngIf="!userform.controls['Ho'].valid&&userform.controls['Ho'].dirty"></p-message>
+             </div>
+            
+            </div>
+           <div class="ui-g-3 xx">
+             <input type="text" formControlName="Ten"  pInputText placeholder="Tên" style="width: 200px;margin-right: 5px;">
+             <div style="margin-top: 2px;">
+              <p-message severity="error" text="Vui long nhập tên" *ngIf="!userform.controls['Ten'].valid&&userform.controls['Ten'].dirty"></p-message>
+             </div>  
+           </div>
+          
+         </div>
+       <div class="ui-g">
+           <div class="ui-g-3">
+                 <h3>Chức danh</h3>
+           </div>
+           <div class="ui-g-3">
+             <h3>Cấp bậc hiện tại</h3>
+           </div>
+       </div>
+       <div class="ui-g">
+         <div class="ui-g-3 xx">
+           <input type="text" formControlName="ChucDanh"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+            <div style="margin-top: 1px">
+              <p-message severity="error" text="Vui lòng nhập chức danh" *ngIf="!userform.controls['ChucDanh'].valid&&userform.controls['ChucDanh'].dirty"></p-message>
+            </div>
+          </div>
+         <div class="ui-g-3" style="margin-top:-26px;">
+           <p-dropdown [options]="capBac" formControlName="CapBac"></p-dropdown>
+           
+           <div style="margin-top: 1px;">
+              <p-message severity="error" text="Vui lòng chọn cấp bậc" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+            </div>
+        </div>
+       </div>
+       <div class="ui-g">
+         <div class="ui-g-3">
+               <h3>Số năm kinh nghiệm</h3>
+         </div>
+       </div>
+       <div class="ui-g">
+         <div class="ui-g-3 xx">
+           <input type="text" formControlName="KinhNghiem" pInputText placeholder="Số năm kinh nghiệm" style="width:471px;;margin-right: 5px;">
+           <div style="margin-top: 1px;">
+              <p-message severity="error" text="Vui lòng nhập kinh nghiệm" *ngIf="!userform.controls['KinhNghiem'].valid&&userform.controls['KinhNghiem'].dirty"></p-message>  
+            </div>
+        </div>
+       </div>
+       <div class="ui-g">
+         <div class="ui-g-3" style="margin-left:376px;">
+           <button pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+           <button pButton type="submit" label="Submit" [disabled]="!userform.valid"></button>
+         </div>
+      </div>
+       </div>
+     </div>
+ </div> 
+ </form>
+  -->
+
+
+<!-- <form [formGroup]="userform" (ngSubmit)="onSubmit(userform.value)"  *ngIf="inforCandidate">
+    <p-panel header="Validate">
+    <div class="ui-g" style="border: 1px solid">
+       <div class="ui-g-12">
+         <div class="ui-g-3">
+           <h1 style="margin-top:-10px;">Thông tin cá nhân</h1>
+             <img style="width: 200px;height: 200px;margin-top: 0px;">
+         </div>
+         <div class="ui-g-9">
+           <div class="ui-g">
+               <div class="ui-g-3">
+                     <h3>Họ</h3>
+               </div>
+               <div class="ui-g-3">
+                 <h3>Tên</h3>
+               </div>
+           </div>
+           <div class="ui-g">
+             <div class="ui-g-3 xx">
+               <input value="{{inforCandidate[0].name}}"  name="first1" type="text" size="100" pInputText  [style.visibility]="x" type="text" formControlName="Ho" pInputText placeholder="Họ" style="width: 200px;margin-right: 5px;">
+               
+               <label style="margin-left: -205px;" [style.visibility]="y">{{ho}}</label>
+               <div style="margin-top: 2px;">
+                <p-message severity="error" text="Vui lòng nhập Họ" *ngIf="!userform.controls['Ho'].valid&&userform.controls['Ho'].dirty"></p-message>
+               </div>
+              
+              </div>
+             <div class="ui-g-3 xx">
+               <input name="first2" [style.visibility]="x" type="text" formControlName="Ten"  pInputText placeholder="Tên" style="width: 200px;margin-right: 5px;">
+               <label style="margin-left: -205px;" [style.visibility]="y">{{ten}}</label>
+               <div style="margin-top: 2px;">
+                <p-message severity="error" text="Vui long nhập tên" *ngIf="!userform.controls['Ten'].valid&&userform.controls['Ten'].dirty"></p-message>
+               </div>  
+             </div>
+            
+           </div>
+         <div class="ui-g">
+             <div class="ui-g-3">
+                   <h3>Chức danh</h3>
+             </div>
+             <div class="ui-g-3">
+               <h3>Cấp bậc hiện tại</h3>
+             </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3 xx">
+             <input name="first3" [style.visibility]="x" type="text" formControlName="ChucDanh"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+             <label  style="margin-left: -205px;" [style.visibility]="y" >{{chucdanh}}</label>
+             <div style="margin-top: 1px">
+                <p-message severity="error" text="Vui lòng nhập chức danh" *ngIf="!userform.controls['ChucDanh'].valid&&userform.controls['ChucDanh'].dirty"></p-message>
+              </div>
+            </div>
+           <div class="ui-g-3" style="margin-top:-26px;">
+             <p-dropdown name="first5" [style.visibility]="x"   [options]="capBac" formControlName="CapBac" [style]="{'width':'200px'}"></p-dropdown>
+             <label  style="margin-left: -173px;" [style.visibility]="y">{{capbac}}</label>
+             <div style="margin-top: 1px;">
+                <p-message  severity="error" text="Vui lòng chọn cấp bậc" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+              </div>
+          </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3">
+                 <h3>Số năm kinh nghiệm</h3>
+           </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3 xx">
+             <input name="first4" [style.visibility]="x" type="text" formControlName="KinhNghiem" pInputText placeholder="Số năm kinh nghiệm" style="width:471px;;margin-right: 5px;">
+             <label  style="margin-left: -1px;margin-top: 10px;" [style.visibility]="y">{{kinhnghiem}}</label>
+             <div style="margin-top: 1px;">
+                <p-message severity="error" text="Vui lòng nhập kinh nghiệm" *ngIf="!userform.controls['KinhNghiem'].valid&&userform.controls['KinhNghiem'].dirty"></p-message>  
+              </div>
+          </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3" style="margin-left:376px;">
+             <button pButton type="button" [style.visibility]="x" (click)="onClear()" style="margin-right: 5px;" label="Hủy" ></button>
+             <button pButton type="submit" [style.visibility]="x"   label="Lưu" [disabled]="!userform.valid"></button>
+             <div style="margin-top: -33px;margin-left: 61px;">
+             <button pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+              </div>
+          </div>
+        </div>
+        
+        </div>
+       </div>
+   </div> 
+   </p-panel>
+ </form> -->
+
+
+<!-- <div  [style.visibility]="HienThi" *ngIf="inforCandidate" >
+  <h3>{{inforCandidate[0].name}}</h3>
+  <h3>{{inforCandidate[0].email}}</h3>
+  <h3>{{inforCandidate[0].experience}}</h3>
+  <h3>{{inforCandidate[0].phone}}</h3>
+  <h3>{{inforCandidate[0].position}}</h3>
+  <h3>{{inforCandidate[0].skill}}</h3>
+  <h3>{{inforCandidate[0].idUser}}</h3>
+</div> -->
+
+
+<form [formGroup]="userform1" (ngSubmit)="onSubmit1(userform1.value)"  *ngIf="inforCandidate">
+  <p-panel>
+  <div class="ui-g" style="border: 1px solid">
+     <div class="ui-g-12">
+       <div class="ui-g-3">
+         <h1 style="margin-top:-10px;">Thông tin cá nhân</h1>
+           <img src="https://kenh14cdn.com/zoom/600_315/2019/4/27/5cc016debe2c9-2-hq-blackpink-jisoo-photos-coachella-off-the-page-fansite-1556342665620403918112-crop-15567702594171121321828.jpg" style="width: 200px;height: 200px;margin-top: 0px;">
+       </div>
+       <div class="ui-g-9">
+         <div class="ui-g">
+             <div class="ui-g-3">
+                   <h3>Tên</h3>
+                 
+             </div>
+             <div class="ui-g-3">
+               <h3>Email</h3>
+             </div>
+         </div>
+         <div class="ui-g">
+           <div class="ui-g-3 xx">
+             <input value="{{inforCandidate[0].name}}" [(ngModel)]="name"    name="first1" type="text" size="100" pInputText  [style.visibility]="x" type="text" formControlName="Name" pInputText placeholder="Họ" style="width: 200px;margin-right: 5px;">
+            </div>
+           
+            <div class="ui-g-3 xx">
+             <input   value="{{inforCandidate[0].email}}"   name="first2" [style.visibility]="x" type="text" formControlName="Email"  pInputText placeholder="Tên" style="width: 200px;margin-right: 5px;">
+            </div>
+          
+         </div>
+       <div class="ui-g">
+           <div class="ui-g-3">
+                 <h3>Trường</h3>
+           </div>
+           <div class="ui-g-3">
+             <h3>Chuyên ngành</h3>
+           </div>
+       </div>
+       <div class="ui-g">
+         <div class="ui-g-3 xx">
+           <input  value="{{inforCandidate[0].nameSchool}}"  name="first3" [style.visibility]="x" type="text" formControlName="truong"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+         </div>
+         <input value="{{inforCandidate[0].faculty}}"  name="first3" [style.visibility]="x" type="text" formControlName="chuyenhNganh"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+                <h3>Năm học</h3>
+          </div>
+          <div class="ui-g-3">
+            <h3>Số điện thoại</h3>
+          </div>
+      </div>
+        <div class="ui-g">
+          <div class="ui-g-3 xx">
+            <input   value="{{inforCandidate[0].yearGraduation}}" name="first3" [style.visibility]="x" type="text" formControlName="namHoc"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+          </div>
+          <input value="{{inforCandidate[0].phone}}" name="first3" [style.visibility]="x" type="text" formControlName="soDienThoai"  pInputText placeholder="Chuc danh" style="width: 200px;margin-right: 5px;">
+        </div>
+
+       <div class="ui-g">
+        <button pButton type="submit">Luu</button>
+      </div>
+    </div>
+     </div>
+ </div> 
+ </p-panel>
+ 
+</form>
+

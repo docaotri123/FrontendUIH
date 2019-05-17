@@ -1,0 +1,71 @@
+
+<div class="ui-g" >
+    <div class="ui-g-12">
+      <div class="ui-g ">
+        <div class="ui-g-1">
+            
+        </div>
+        <div class="ui-g-10">
+            <div class="ui-g detail">
+                <div class="ui-g-2">
+                  <img  src="https://images.vietnamworks.com/pictureofcompany/49/10197315.jpg" alt="Jobs FPT Software recruitment" class="logo img-responsive">
+                </div>
+                <div class="ui-g-6" style="margin-left: 20px;">
+                  <h1 class="job-title">{{item.title}}</h1>
+                  <!-- <a href="https://www.vietnamworks.com/jobs-at-fpt-software-e529938-en" class="track-event" data-evt-type="view-other-jobs">
+                    FPT SOFTWARE
+                  </a> -->
+                  <span class="gray-light m-l-xs m-r-xs hidden-xs">-</span>
+                  <span>{{item.level}}</span>
+                  <a itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" href="https://www.vietnamworks.com/jobs-in-da-nang-v17-en" title="Jobs in Da Nang">Địa điểm:{{item.location}}</a>
+                
+                  <strong class="text-primary text-lg"> Mức lương:{{item.maxSalary}}</strong><br>
+                  <span class="view gray-light">
+                    390 views
+                  </span>
+                  <span class="expiry gray-light">Ngày đăng:{{item.endDate}}</span>
+                </div>
+
+                
+                <div class="ui-g-2" style="padding-left: 268px;padding-top: 40px;">
+                    <div *ngIf="checkApply==true">
+                        <button pButton type="button" label="Da Ưng tuyển" style="width: 120px;height: 50px;margin-bottom: 10px;margin-left: -112px;"></button>
+
+                    </div>
+
+                    <div *ngIf="checkApply==false">
+                        <button pButton type="button" label="Ưng tuyển" style="width: 120px;height: 50px;margin-bottom: 10px;margin-left: -112px;" (click)="showDialog()" ></button>
+                        <div *ngIf="checkSave==true">
+                          <button pButton type="button" label="đã lưu việc làm" style="width: 120px;height: 50px;margin-left: -112px;"(click)="UnSaveWork()" ></button>
+                        </div>
+                        <div *ngIf="checkSave==false">
+                          <button pButton  type="button" label="Lưu việc làm" style="width: 120px;height: 50px;margin-left: -112px;" (click)="SaveWork()"></button>
+                        </div>
+                    </div>
+                    
+                  <!-- <button pButton type="button" label="Lưu việc làm" style="width: 120px;height: 50px;margin-left: -112px;" ></button> -->
+                </div>
+               
+
+
+
+            </div>
+        </div>
+        <div class="ui-g-1">
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<p-dialog header="Nộp CV" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '800px', minWidth: '900px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+        <app-apply-job [infoJob]="infoJob" [listCandidate]="listCandidate" ></app-apply-job>
+        <p-footer>
+        
+            <button type="button" pButton icon="pi pi-check" (click)="ApplyJob()"   label="Yes"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
+        </p-footer>
+</p-dialog>
+

@@ -1,0 +1,228 @@
+<a [routerLink]="['../thongTinCaNhan']">Thông tin cá nhân</a>
+<a [routerLink]="['../saveWork']">Việc làm của tôi</a>
+<a [routerLink]="['../viewCV']">Xem CV</a>
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <app-profile-candidate [inforCandidate]="inforCandidate"></app-profile-candidate>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <app-infomation-refer [inforCandidate]="inforCandidate"></app-infomation-refer>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <app-level-candidate [candidateSkill]="candidateSkill"></app-level-candidate>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+               <app-langugae-candidate [candidateLanguage]="candidateLanguage"></app-langugae-candidate>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <app-experience-candidate [candidateExperience]="candidateExperience"></app-experience-candidate>
+            </div>
+        </div>
+        <!-- <div class="ui-g">
+            <div class="ui-g-12">
+                <app-education-candidate></app-education-candidate>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <app-dream-work></app-dream-work>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+
+
+
+
+<!-- <div id="download">
+    <img #canvas>
+    <a #downloadLink></a>
+</div> -->
+
+<!-- <div class="btn btn-primary" (click)="downloadImage()">DL</div> -->
+<!-- <div class="btn btn-primary" (click)="UploadCV()">Upload CV</div>
+<div class="btn btn-primary" (click)="OK()">OK</div> -->
+<!-- <button (click)="Export()">PDF</button> -->
+<div class="ui-g">
+  <div class="ui-g-6" style="padding-left: 700px">
+      <p-button  (click)="UploadCV()" label="Upload CV" ></p-button>
+  </div>
+  <div class="ui-g-6" style="margin-left:-40px;;">
+      <p-button (click)="OK()" label="OK" ></p-button>
+  </div>
+</div>
+
+
+
+
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Resume</title>
+    <link type="text/css" rel="stylesheet" href="./assets/css/red.css" />
+    <link type="text/css" rel="stylesheet" href="./assets/css/print.css" media="print"/>
+    <!--[if IE 7]>
+    <link href="css/ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 6]>
+    <link href="css/ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript" src="./assets/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="./assets/js/cufon.yui.js"></script>
+    <script type="text/javascript" src="./assets/js/scrollTo.js"></script>
+    <script type="text/javascript" src="./assets/js/myriad.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="./assets/js/custom.js"></script>
+    <script type="text/javascript">
+            Cufon.replace('h1,h2');
+    </script>
+    </head>
+    <body style="visibility: hidden">
+    <!-- Begin Wrapper -->
+    <div  #screen  id="wrapper" *ngIf="inforCandidate" >
+      <div class="wrapper-top"></div>
+      <div class="wrapper-mid">
+        <!-- Begin Paper -->
+        <div id="paper">
+          <div class="paper-top"></div>
+          <div id="paper-mid">
+            <div class="entry">
+              <!-- Begin Image -->
+              <div class="entry">
+                <!-- Begin Image -->
+                <img class="portrait" src="../assets/images/image.jpg" alt="John Smith" />
+                <!-- End Image -->
+                <!-- Begin Personal Information -->
+                <div class="self">
+                  <h1 class="name">{{inforCandidate[0].name}} <br />
+                    <span>{{inforCandidate[0].nameSchool}}</span></h1>
+                  <ul>
+                    <li class="ad" style="padding-left: 36px;" >{{inforCandidate[0].faculty}}</li>
+                    <li class="mail" style="padding-left: 36px;" >{{inforCandidate[0].email}}</li>
+                    <li class="tel" style="padding-left: 36px;">{{inforCandidate[0].phone}}</li>
+                  </ul>
+                </div>
+                <!-- End Personal Information -->
+                <!-- Begin Social -->
+                <!-- <div class="social">
+                  <ul>
+                    <li><a class='north' href="#" title="Download .pdf"><img src="./assets/images/icn-save.jpg" alt="Download the pdf version" /></a></li>
+                    <li><a class='north' href="javascript:window.print()" title="Print"><img src="./assets/images/icn-print.jpg" alt="" /></a></li>
+                    <li><a class='north' id="contact" href="contact/index.html" title="Contact Me"><img src=".assets/images/icn-contact.jpg" alt="" /></a></li>
+                    <li><a class='north' href="#" title="Follow me on Twitter"><img src="./assets/images/icn-twitter.jpg" alt="" /></a></li>
+                    <li><a class='north' href="#" title="My Facebook Profile"><img src="./assets/images/icn-facebook.jpg" alt="" /></a></li>
+                  </ul>
+                </div> -->
+                <!-- End Social -->
+              </div>
+              <!-- End Image -->
+              <!-- Begin Personal Information -->
+
+              <!-- End Personal Information -->
+              <!-- Begin Social -->
+              <!-- <div class="social">
+                <ul>
+                  <li><a class='north' href="#" title="Download .pdf"><img src="./assets/images/icn-save.jpg" alt="Download the pdf version" /></a></li>
+                  <li><a class='north' href="javascript:window.print()" title="Print"><img src="./assets/images/icn-print.jpg" alt="" /></a></li>
+                  <li><a class='north' id="contact" href="contact/index.html" title="Contact Me"><img src=".assets/images/icn-contact.jpg" alt="" /></a></li>
+                  <li><a class='north' href="#" title="Follow me on Twitter"><img src="./assets/images/icn-twitter.jpg" alt="" /></a></li>
+                  <li><a class='north' href="#" title="My Facebook Profile"><img src="./assets/images/icn-facebook.jpg" alt="" /></a></li>
+                </ul>
+              </div> -->
+              <!-- End Social -->
+            </div>
+            <!-- Begin 1st Row -->
+            <div class="entry">
+              <h2 style="width: 238px;">Mô tả công việc</h2><br>
+            </div>
+            <div style="padding-top: 37px;width: 635px;" >
+              <p>{{inforCandidate[0].moTaBanThan}}</p>
+            </div>
+            <!-- End 1st Row -->
+            <!-- Begin 2nd Row -->
+            
+            <div class="entry">
+              <h2>Kinh nghiệm</h2>
+              <div class="content"  *ngIf="candidateExperience">
+                <h3>2/1/2019 -2/4/2019</h3><br>
+                  <em style="padding-left: 23px;"> {{candidateExperience[0].chucDanh}}</em>
+                  <em style="padding-left: 23px;">Công ty:{{candidateExperience[0].congTy}}</em>
+                  <em style="padding-left: 23px;">Mô tả::{{candidateExperience[0].moTa}}</em>
+              </div>
+            </div>
+            <!-- End 2nd Row -->
+            <!-- Begin 3rd Row -->
+            <!-- End 3rd Row -->
+            <!-- Begin 4th Row -->
+            <div class="entry">
+              <h2 style="margin-left: -76px;margin-top: -9px;">SKILLS</h2>
+              <div class="content">
+                <h3>Ngôn ngữ</h3>
+                <div>
+                <ul class="skills" *ngFor="let item of candidateSkill">
+                  <li>{{item.nameSkill}}</li>
+               </ul>
+               </div>
+              </div>
+              <div class="content">
+                <h3>Languages</h3>
+                <ul class="skills" *ngFor="let item of candidateLanguage">
+                    <li>{{item.nameLanguage}}</li>
+                </ul>
+              </div>
+            </div>
+            <!-- End 4th Row -->
+             <!-- Begin 5th Row -->
+            <!-- <div class="entry">
+            <h2>WORKS</h2>
+                <ul class="works">
+                    <li><a href="./assets/images/1.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/2.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/3.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/1.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/2.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/3.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/1.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                    <li><a href="./assets/images/1.jpg" rel="gallery" title="Lorem ipsum dolor sit amet."><img src="./assets/images/image.jpg" alt="" /></a></li>
+                </ul>
+            </div> -->
+            <!-- Begin 5th Row -->
+          </div>
+          <div class="clear"></div>
+          <div class="paper-bottom"></div>
+        </div>
+        <!-- End Paper -->
+      </div>
+      <div class="wrapper-bottom"></div>
+    </div>
+    <div id="message"><a href="#top" id="top-link">Go to Top</a></div>
+    <!-- End Wrapper -->
+ </body>
+
+<div id="download" >
+    <img #canvas style="visibility: hidden">
+    <a #downloadLink></a>
+</div>
+
+<img [src]="img" id='content' #content >
+
+
+
+
+
+    
+    

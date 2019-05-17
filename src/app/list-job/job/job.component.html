@@ -1,0 +1,67 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+      <div class="ui-g">
+        <div class="ui-g-3">
+            <div class="logo-box">
+                <a data-item-id="1080993" href="https://www.vietnamworks.com/tuyen-gap-02-it-business-analyst-lam-viec-tai-ha-noi-1-1080993-jv/?utm_source=vnw_homepage&amp;utm_medium=HotJob&amp;utm_campaign=HotJob&amp;source=homePage" target="_blank" title="Việc làm - Tuyển Gấp 02 IT Business Analyst Làm Việc Tại Hà Nội - Yumeshin Vietnam - Hà Nội" tabindex="0">
+                <img style="width: 150px;height: 100px;" class="img-responsive logo" id="topjob-logo-1080993" src="https://techtalk.vn/wp-content/uploads/2018/06/Cover-696x392.jpg" alt="Tuyển Gấp 02 IT Business Analyst Làm Việc Tại Hà Nội" >
+                </a>
+            </div>
+        </div>
+        <div class="ui-g-6">
+            <div class="detail">
+                <p class="job-title">
+                        {{item.title}}
+                      
+                </p>
+              <div class="job-title-bottom">
+                  <span>Lương:</span>
+                  <span style="color: darkgoldenrod">{{item.maxSalary}}</span>
+                  <span class="hidden-xs">-</span>
+                  <span>Khu vực:</span>
+                  <span style="color: darkgoldenrod" class="location hidden-xs">{{item.location}}</span>
+                  <span class="hidden-xs">-</span>
+                  <span>Đã đăng:</span>
+                  <span style="color: darkgoldenrod">{{item.startdate}}</span>
+                  <span class="hot-job-badge">Hot</span>
+                  
+              </div>
+              
+            </div>
+            <div style="margin-top: 75px;margin-left: 30px;">
+                <a routerLink="/detailjob/{{item.idJob}}">Show Detail</a>
+            </div>
+        </div>
+        <div class="ui-g-3">
+            <div *ngIf="checkApply==true">
+                
+            </div>
+          <div *ngIf="checkApply==false">
+              <img style="width: 30px;height: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYk6jckNjAjYwNXGbAc-cX7HuwqD3B8b0Gm7V50dtxHOEd5RPF">
+            <div *ngIf="check==false" style="margin-top:-28px;margin-left: 34px;">
+                <!-- <a style="color: black">Lưu</a>   -->
+                <span class="cheked"  (click)="Save()">
+                  <label>Lưu </label>
+                  
+                </span>
+            </div>
+            
+            <div *ngIf="check==true">
+              <span class="cheked"  (click)="UnSave()">
+                <label>Đã lưu</label>
+                
+              </span>
+            </div>
+            
+          </div>
+           
+        
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+
+
+  

@@ -1,0 +1,31 @@
+<form [formGroup]="userform2" (ngSubmit)="onSubmit(userform2.value)">
+<div class="ui-g-12" style="border: 1px solid">
+  <div class="ui-g">
+      <i class="fa fa-flag"></i> 
+      <h1 style="margin-top: -6px;margin-left: 10px;"> Thông Tin Chung</h1>
+  </div>
+  <div class="ui-g">
+      <h3>Giới thiệu bản thân</h3>
+  </div>
+  <div class="ui-g" *ngIf="inforCandidate">
+          <textarea  [(ngModel)]="inforCandidate[0].moTaBanThan"   [style.visibility]="x" formControlName="Decription" pInputTextarea style="width: 849px;height: 100px;;" name="first">
+            
+          </textarea>
+          <label style="margin-left: -847px;" [style.visibility]="y"  ></label>
+       
+  </div>
+  <div class="ui-g">
+    <p-message severity="error" text="Vui lòng nhập thông tin" *ngIf="!userform2.controls['Decription'].valid&&userform2.controls['Decription'].dirty"></p-message>
+  </div>
+  <div class="ui-g">
+      <div style="margin-left: 750px;margin-top: 10px;">
+          <button pButton  [style.visibility]="x" (click)="Cancel()" type="button" style="margin-right: 5px;" label="Hủy" ></button>
+          <button pButton [style.visibility]="x" type="submit" label="Lưu" ></button>
+          <div style="margin-top: -33px;margin-left: 61px;" >
+            <button pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+          </div>
+      </div>
+  </div>
+  
+</div>
+</form>

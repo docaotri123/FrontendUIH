@@ -1,0 +1,54 @@
+.content{
+    min-height: 250px;
+    height: 1px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+   
+}
+.channel-label
+{
+    transition: all .4s cubic-bezier(.47,0,.745,.715);
+    margin-bottom: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.number-jobs
+{
+    size: 10px;
+    padding-left: 50px;
+}
+
+.job-content:hover img
+{
+    z-index: 1;
+    opacity: .8;
+
+}
+.job-detail
+{
+    color: blanchedalmond;
+    font:bold;
+    width: 434px;
+    height: 261px;
+    z-index: 100;
+    margin-top: -171px;
+    position: relative;
+    margin-left: 114px;
+}
+.job-detail
+{
+    z-index: 0 ;
+}
+
+
+
+
+
+
+
+
+

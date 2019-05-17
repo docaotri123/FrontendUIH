@@ -1,0 +1,93 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+      <div class="ui-g">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Factory_icon.svg" style="width: 50px;height: 50px;">
+          <h1>Thông tin công ty</h1>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2 ">
+              <h3>Tên công ty</h3>
+          </div>
+          <div class="ui-g-6">
+              <input type="text" pInputText placeholder="Tên công ty" style="width: 500px;margin-right: 5px;"> 
+          </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+            <h3>Quy mô công ty</h3>
+        </div>
+        <div class="ui-g-6">
+            <p-dropdown [options]="quymo" [(ngModel)]="selectedCity1"></p-dropdown>
+        </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Địa chỉ</h3>
+          </div>
+          <div class="ui-g-6">
+              <input type="text" pInputText placeholder="Địa chỉ công ty" style="width: 500px;margin-right: 5px;"> 
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Ngành nghề</h3>
+          </div>
+          <div class="ui-g-6">
+              <div class="ui-g-3" style="margin-left:-7px;">
+                  <p-multiSelect [options]="nganhnghe" [(ngModel)]="selectedCars2" [style]="{'width':'502px'}" [panelStyle]="{minWidth:'20em'}"></p-multiSelect>
+                  <div style="width: 400px;">
+                      <p>Nghành nghề: {{selectedCars2}}</p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Người liên hệ</h3>
+          </div>
+          <div class="ui-g-6">
+              <input type="text" pInputText placeholder="Người liên hệ" style="width: 500px;margin-right: 5px;"> 
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Số điện thoại</h3>
+          </div>
+          <div class="ui-g-6">
+              <input type="text" pInputText placeholder="Số điện thoại" style="width: 500px;margin-right: 5px;"> 
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-2">
+              <h3>Sơ lược về công ty</h3>
+          </div>
+          <div class="ui-g-6">
+              <textarea  [rows]="5" [cols]="66"  pInputTextarea autoResize="autoResize">
+
+              </textarea>
+          </div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-2">
+              <h3>Phúc lơi từ công ty</h3>
+          </div>
+          <div class="ui-g-6">
+              <div class="ui-g-3" style="margin-left: -7px;">
+                  <p-multiSelect [options]="phucLoi" [(ngModel)]="selectedCars1" [style]="{'width':'502px'}" [panelStyle]="{minWidth:'20em'}"></p-multiSelect>
+                  <div style="width: 400px;">
+                      <p>Nghành nghề: {{selectedCars1}}</p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-4" style="margin-left: 694px;">
+              <p-button label="Lưu" style="margin-right: 10px;"></p-button>
+          </div>
+      </div>
+      
+      
+  </div>
+</div>

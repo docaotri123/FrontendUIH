@@ -1,0 +1,33 @@
+<a [routerLink]="['../thongTinCaNhan']">Thông tin cá nhân</a>
+<a [routerLink]="['../saveWork']">Việc làm của tôi</a>
+<br>
+<a [routerLink]="['../saveWork']">Công việc đã lưu</a>
+<a [routerLink]="['../applywork']">Công việc đã ứng tuyển</a>
+
+<!-- <div class="ui-g">
+  <div class="ui-g-12">
+      <div class="ui-g">
+          <div class="ui-g-12">
+                  <div *ngFor="let item of listJob">
+                      <div class="ui-g-12">
+                            <app-apply-work [applyWork]="item"></app-apply-work>
+                      </div>
+                  </div>
+          </div>
+      </div>
+  </div>
+</div>  -->
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                    <div *ngFor="let item of listApply">
+                        <div class="ui-g-12">
+                              <app-apply-work [applyWork]="item"></app-apply-work>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div> 

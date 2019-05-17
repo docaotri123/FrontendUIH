@@ -1,0 +1,56 @@
+// .search-jobs-form{
+//     background: rgba(0,0,0,.65);
+//     z-index: 100;
+//     position: relative;
+//     margin-top: -245px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 60%;
+// }
+// .search-widget h1{
+//     font-size: 18px;
+//     margin-bottom: -14px;
+//     text-align: left;
+//     color: #fff;
+//     margin-top: 1px;
+//     margin-left: 6px;
+// }
+// .search-widget strong{
+//     font-size: 27px;
+// }
+.search-jobs-form{
+    background: rgba(0,0,0,.65);
+    z-index: 150;
+    position: relative;
+    margin-top: -245px;
+    margin-left: auto;
+    height: 110px;
+    margin-right: auto;
+    width: 60%;
+}
+.search-widget h1{
+    font-size: 18px;
+    margin-bottom: -14px;
+    text-align: left;
+    color: #fff;
+    margin-top: 1px;
+    margin-left: 6px;
+}
+.search-widget strong{
+    font-size: 27px;
+}
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    width: 2.375rem;
+    height: 2.500rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}

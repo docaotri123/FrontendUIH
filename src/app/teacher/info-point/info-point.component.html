@@ -1,0 +1,112 @@
+<a [routerLink]="['../../ketqua',MSSV]">Kết quả học tập</a>
+<a [routerLink]="['../../xemCV']">Xem CV</a>
+<a [routerLink]="['../../hethongdanhgia']">Hệ thống đánh giá</a>
+
+<p-table #dt2 [value]="student1" >
+        <ng-template pTemplate="body" let-rowData let-columns="columns" >
+            <tr [pEditableRow]="rowData">
+                    <div class="ui-g" style="margin-left: 500px;">
+                            <div class="ui-g-12">
+                                <div class="ui-g">
+                                    <div class="ui-g-4">
+                                        <h1>Bảng kết quả học tập</h1>
+                                    </div>
+                                </div>
+                                <div class="ui-g">
+                                    <div class="ui-g-3">
+                                        <span>Họ tên sinh viên</span>
+                                    </div>
+                                    <div class="ui-g-3">
+                                        <span>{{rowData.Ten}}</span>
+                                    </div>
+                                </div>
+                                <div class="ui-g">
+                                    <div class="ui-g-3">
+                                        <span>Mã số sinh viên</span>
+                                    </div>
+                                    <div class="ui-g-3">
+                                        <span>{{rowData.MSSV}}</span>
+                                    </div>
+                                </div>
+                                <div class="ui-g">
+                                    <div class="ui-g-3">
+                                        <span>Chuyên ngành</span>
+                                    </div>
+                                    <div class="ui-g-3">
+                                        <span>{{rowData.Khoa}}</span>
+                                    </div>
+                                </div>
+                                <div class="ui-g">
+                                    <div class="ui-g-3">
+                                        <span>Khóa học</span>
+                                    </div>
+                                    <div class="ui-g-3">
+                                        <span>{{rowData.nam}}</span>
+                                    </div>
+                                </div>
+                                <div class="ui-g">
+                                    <div class="ui-g-3">
+                                        <span>Loại hình đào tạo</span>
+                                    </div>
+                                    <div class="ui-g-3">
+                                        <span>Đại học</span>
+                                    </div>
+                                    <div class="ui-g-6" style="margin-top:-141px;">
+                                        <img src="{{rowData.img}}" width="100px" height="100px">
+                                    </div>
+                                </div>
+                          
+                            </div>
+                          </div>
+
+            </tr>
+        </ng-template>
+ </p-table>
+ 
+
+<p-table #dt1 [columns]="cols1" [value]="infoStudent1" [paginator]="true" [rows]="10" >
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt1.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        
+            <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                              {{col.header}}
+                          <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                </tr>
+                <tr>
+          </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" >
+        <!-- <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr> -->
+        <tr [pEditableRow]="rowData">
+            <td> 
+                {{rowData.STT}}
+            </td>
+            <td> 
+                {{rowData.TMH}}
+            </td>
+            <td> 
+                {{rowData.ML}}
+            </td>
+            <td> 
+                {{rowData.TK}}
+            </td>
+            <td> 
+                {{rowData.GC}}
+            </td>
+           
+        </tr>
+    </ng-template>
+  </p-table>
+
+

@@ -1,0 +1,162 @@
+<!-- 
+<div class="ui-g"style="border: 1px solid">
+  <div class="ui-g-12">
+      <div class="ui-g">
+              <i class="fa fa-flag"></i> 
+              <h1 style="margin-top: -6px;margin-left: 10px;">Kinh nghiệm làm việc</h1>
+      </div>
+      <div class="ui-g">
+          <span>Mô tả kinh nghiệm làm việc của bạn càng chi tiết càng tốt</span>
+      </div>
+      <div class="ui-g">
+              <label><strong class="text-red">*</strong> Chức danh</label>
+      </div>
+      <div class="ui-g" style="margin-top: 15px;">
+              <span class="ui-float-label">
+                      <input [style.visibility]="x" [(ngModel)]="cd"  id="float-input" type="text" size="30" pInputText> 
+                      <label [style.visibility]="x"  for="float-input">Ví dụ:Designer</label>
+                    
+              </span>
+              <label [style.visibility]="y" style="margin-left: -247px;margin-top: -19px;">{{cd}}</label>
+              
+      </div>
+      <div class="ui-g" style="margin-top: 15px;">
+              <label><strong class="text-red">*</strong>Công ty</label>
+      </div>
+      <div class="ui-g" style="margin-top: 15px">
+              <span class="ui-float-label">
+                      <input [style.visibility]="x" [(ngModel)]="ct"  id="float-input" type="text" size="30" pInputText> 
+                      <label [style.visibility]="x" for="float-input">Ví dụ:Fpt</label>
+              </span>
+              <label [style.visibility]="y" style="margin-left: -247px;margin-top: -19px;">{{ct}}</label>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+                  <label><strong class="text-red">*</strong>Từ tháng</label>
+          </div>
+          <div class="ui-g-3">
+                  <label><strong class="text-red">*</strong>Đến tháng</label>
+          </div>
+      </div>
+      <div class="ui-g">
+              <div class="ui-g-3">
+                      <p-calendar [style.visibility]="x"   [(ngModel)]="date2" [showIcon]="true"></p-calendar>
+                      <label [style.visibility]="y" style="margin-left:-208px;margin-top: -19px;">{{a}}</label>          
+              </div>
+              
+              <div class="ui-g-3">
+                      <p-calendar [style.visibility]="x" [(ngModel)]="date3" [showIcon]="true"></p-calendar>    
+                      <label [style.visibility]="y" style="margin-left:-208px;margin-top: -19px;">{{b}}</label>
+              </div>
+              
+      </div>
+      <div class="ui-g">
+          <label><strong class="text-red">*</strong>Mô tả</label>
+      </div>
+      <div class="ui-g">
+          <textarea [style.visibility]="x" [(ngModel)]="mt"  pInputTextarea style="width: 864px;height: 100px;;"></textarea>
+          <label [style.visibility]="y" style="margin-left: -862px;">{{mt}}</label>
+     </div>
+      
+
+      <div class="ui-g">
+              <div style="margin-left: 750px;margin-top: 10px;">
+                  <button [style.visibility]="x" pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                  <button [style.visibility]="x" pButton (click)="onSubmit()"  type="button" label="Lưu" ></button>
+                  <div style="margin-top: -33px;margin-left: 61px;">
+                        <button pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+                  </div>
+             </div>
+      </div>
+  </div>
+</div> -->
+
+
+
+<p-panel>
+<div class="ui-g"style="border: 1px solid" *ngIf="candidateExperience">
+                <div class="ui-g-12">
+                    <div class="ui-g">
+                            <i class="fa fa-flag"></i> 
+                            <h1 style="margin-top: -6px;margin-left: 10px;">Kinh nghiệm làm việc</h1>
+                    </div>
+                    <div class="ui-g">
+                        <span>Mô tả kinh nghiệm làm việc của bạn càng chi tiết càng tốt</span>
+                    </div>
+                    <div class="ui-g">
+                            <label><strong class="text-red">*</strong> Chức danh</label>
+                    </div>
+                    <div class="ui-g" style="margin-top: 15px;">
+                            <span class="ui-float-label">
+                                    
+                                    <input id="float-input"  value="{{candidateExperience[0].chucDanh}}"    name="first1" type="text" size="100" pInputText  [style.visibility]="x" type="text"   style="width: 200px;margin-right: 5px;">
+                                    <label   for="float-input">Ví dụ:Designer</label>
+                                  
+                            </span>
+                            <label  style="margin-left: -247px;margin-top: -19px;"></label>
+                            
+                    </div>
+                    <div class="ui-g" style="margin-top: 15px;">
+                            <label><strong class="text-red">*</strong>Công ty</label>
+                    </div>
+                    <div class="ui-g" style="margin-top: 15px">
+                            <span class="ui-float-label">
+                                <input id="float-input"  value="{{candidateExperience[0].congTy}}"    name="first1" type="text" size="100" pInputText  [style.visibility]="x" type="text"   style="width: 200px;margin-right: 5px;">
+                                    <label for="float-input">Ví dụ:Fpt</label>
+                            </span>
+                            <label style="margin-left: -247px;margin-top: -19px;"></label>
+                    </div>
+                    <div class="ui-g">
+                        <div class="ui-g-3">
+                                <label><strong class="text-red">*</strong>Từ tháng</label>
+                        </div>
+                        <div class="ui-g-3">
+                                <label><strong class="text-red">*</strong>Đến tháng</label>
+                        </div>
+                    </div>
+                    <div class="ui-g">
+                            <div class="ui-g-3">
+                                    <p-calendar  [(ngModel)]="date2" [showIcon]="true"></p-calendar>
+                                    <label style="margin-left:-208px;margin-top: -19px;"></label>          
+                            </div>
+                            
+                            <div class="ui-g-3">
+                                    <p-calendar  [(ngModel)]="date3" [showIcon]="true"></p-calendar>    
+                                    <label style="margin-left:-208px;margin-top: -19px;"></label>
+                            </div>
+                            
+                    </div>
+                    <div class="ui-g">
+                        <label><strong class="text-red">*</strong>Mô tả</label>
+                    </div>
+                    <div class="ui-g">
+                        <textarea value="{{candidateExperience[0].moTa}}"   [(ngModel)]="mt"  pInputTextarea style="width: 864px;height: 100px;;"></textarea>
+                        <label  style="margin-left: -862px;"></label>
+                   </div>
+                    
+              
+                    <div class="ui-g">
+                            <div style="margin-left: 750px;margin-top: 10px;">
+                                <button  pButton type="button" style="margin-right: 5px;" label="Hủy" ></button>
+                                <button  pButton (click)="onSubmit()"  type="button" label="Lưu" ></button>
+                                <div style="margin-top: -33px;margin-left: 61px;">
+                                      <button pButton type="button"  (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+                                </div>
+                           </div>
+                    </div>
+                </div>
+</div>
+</p-panel>
+
+<!-- <div *ngIf="candidateExperience">
+        <h3>ConCac</h3>
+        {{candidateExperience[0].chucDanh}}
+        {{candidateExperience[0].congTy}}
+        {{candidateExperience[0].startDate}}
+        {{candidateExperience[0].endDate}}
+        {{candidateExperience[0].moTa}}
+</div>
+
+<div *ngFor="let person of candidateExperience">
+        {{person.chucDanh}}
+</div> -->

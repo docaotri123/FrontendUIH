@@ -1,0 +1,48 @@
+<div class="ui-g" style="border-bottom: 1px solid;">
+  <div class="ui-g-12">
+    <div class="ui-g">
+      <div class="ui-g-4">
+          <h3>{{notifyWork.nameJob}}</h3>
+      </div>
+      <div class="ui-g-1">
+          <h3>Nhận</h3>
+      </div>
+      <div class="ui-g-2">
+          <h3>Ngày cập nhật</h3>
+      </div>
+      <div class="ui-g-4" style="padding-top: 36px;padding-left: 174px;">
+        <p-button label="Xem việc phù hợp" style="margin-right: 10px;"></p-button>
+        <p-button label="Xóa" type="button" (click)="Delete()"  style="margin-right: 10px;"></p-button>
+        <p-button type="button" (click)="Edit()" label="Sửa" style="margin-right: 10px;"></p-button>
+      </div>
+    </div>
+    <div class="ui-g" style="margin-top: -22px;">
+      <div class="ui-g-4">
+        <span>{{notifyWork.khuVuc}}-</span>
+        <span>{{notifyWork.nganhNghe}}-</span>
+        <span>{{notifyWork.kyNang}}-</span>
+        <span>{{notifyWork.capBac}}-</span>
+        <span>{{notifyWork.mucLuong}}</span>
+      </div>
+      <div class="ui-g-1">
+          <span>Hàng ngày</span>
+      </div>
+      <div class="ui-g-2">
+          <span>{{notifyWork.dateCreate}}</span>
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<p-dialog header="Tạo thông báo việc làm" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '500px', minWidth: '500px'}" [minY]="70" 
+        [maximizable]="true" [baseZIndex]="20000">
+        <!-- <input [(ngModel)]='childMgs' type="text"> -->
+        <!-- <app-create-notify-work [mgsChild]='TEN'></app-create-notify-work>      -->
+        <app-create-notify-work  (editJob1)="xuan($event)" [mgsChild1]='JOB'></app-create-notify-work> 
+</p-dialog> 
+ 

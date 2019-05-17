@@ -5,7 +5,6 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {ButtonModule} from 'primeng/button';
 
 import { FormsModule }   from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -17,8 +16,7 @@ import { LoginComponent } from './login/login.component';
     InputTextModule,
     CheckboxModule,
     ButtonModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule
   ],
   declarations: [LoginComponent]
 })

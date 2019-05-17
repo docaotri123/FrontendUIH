@@ -1,0 +1,132 @@
+<a [routerLink]="['../ketqua',MSSV]">Kết quả học tập</a>
+<a [routerLink]="['../xemCV']">Xem CV</a>
+<a [routerLink]="['../hethongdanhgia']">Hệ thống đánh giá</a>
+<!-- <div>
+    <button [style.visibility]="y"  pButton type="button" (click)="View()" label="Xem đánh giá" ></button>
+</div>
+
+
+<div class="ui-g" [style.visibility]="x">
+    <div class="ui-g-12">
+      <div *ngFor="let item of infoCV">
+      <div *ngIf="item.danhGia==''">
+        <div> 
+        <div class="ui-g">
+            <textarea [(ngModel)]="nhanXet"   [style.visibility]="h" pInputTextarea style="width: 849px;height: 100px;;" name="first"></textarea>
+            <label  style="margin-left: -847px;" [style.visibility]="u">{{nhanXet}}</label>
+        </div>
+       <div class="ui-g" >
+        <div class="ui-g-3" style="margin-left: 246px;">
+            <div>
+                <p-button [style.visibility]="h"  (click)="XacNhan()"  label="Xác nhận"></p-button>
+            </div>
+            <div style="margin-top: -34px;margin-left: 95px;">
+                <p-button (click)="Sua()"  [style.visibility]="u" label="Sua"></p-button>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div *ngIf="item.danhGia!=''">
+            <h3>{{item.danhGia}}</h3>
+    </div>   
+
+    </div>
+    -->
+    
+
+      
+      
+      <!-- <div class="ui-g">
+        <div class="ui-g-3">
+            <span>Kỹ năng lập trình</span>
+        </div>
+        <div class="ui-g-6" style="margin-top:1px;margin-left: -101px;">
+            <p-rating [(ngModel)]="val1"></p-rating>
+        </div>
+      </div>
+      <div class="ui-g">
+          <div class="ui-g-3">
+              <span>Hạnh kiểm</span>
+          </div>
+          <div class="ui-g-6" style="margin-top:1px;margin-left: -101px;">
+              <p-rating [(ngModel)]="val2"></p-rating>
+          </div>
+      </div> -->
+     
+      <!-- <div class="ui-g">
+            <div class="ui-g-12">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                      <div  style="display: block;">
+                            <canvas baseChart
+                                    [data]="pieChartData"
+                                    [labels]="pieChartLabels"
+                                    [chartType]="pieChartType">
+                            </canvas>
+                
+                      </div>
+                    </div>
+                </div>
+                <div class="ui-g">
+                    <div class="ui-g-3">
+                        <div style="width: 300px;">
+                            <p-tree styleClass="width:400px;" [value]="files" selectionMode="multiple" [(selection)]="selectedFiles"
+                            (onNodeSelect)="nodeSelect($event)" ></p-tree>
+                        </div>
+                    </div>
+                    <div class="ui-g-9">
+                        <div class="ui-g-3" style="margin-left: -101px;margin-top: 14px;">   <p-rating readonly="true"  [(ngModel)]="val1"></p-rating></div><br>
+                        <div class="ui-g-3" style="margin-left: -296px;margin-top: 28px;"><p-rating readonly="true"  [(ngModel)]="val2"></p-rating></div><br>
+                        <div class="ui-g-3" style="margin-left: -296px;margin-top: 42px;"><p-rating readonly="true"  [(ngModel)]="val3"></p-rating></div><br>
+                        <div class="ui-g-3" style="margin-top: 63px;margin-left: -296px;"><p-rating readonly="true"  [(ngModel)]="val4"></p-rating></div><br>
+                        <div class="ui-g-3" style="margin-top: 81px;margin-left: -296px;"><p-rating readonly="true" [(ngModel)]="val5"></p-rating></div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<div>
+    <button pButton type="button" [style.visibility]="x"  (click)="Close()" label="Đóng" ></button>
+</div> -->
+
+
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g">
+            <div class="ui-g-12">
+              <div  style="display: block;">
+                    <canvas baseChart
+                            [data]="pieChartData"
+                            [labels]="pieChartLabels"
+                            [chartType]="pieChartType">
+                    </canvas>
+        
+              </div>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-3">
+                <div style="width: 400px;">
+                    <p-tree  styleClass="width:500px;" [value]="files"  [(selection)]="selectedFiles" >
+                    
+                    </p-tree>
+                </div>
+                
+                
+            
+            
+            <div class="ui-g-9">
+                <div class="ui-g-3" style="margin-left: -101px;margin-top: 14px;">   <p-rating readonly="true"  [(ngModel)]="val1"></p-rating></div><br>
+                <div class="ui-g-3" style="margin-left: -296px;margin-top: 28px;"><p-rating readonly="true"  [(ngModel)]="val2"></p-rating></div><br>
+                <div class="ui-g-3" style="margin-left: -296px;margin-top: 42px;"><p-rating readonly="true"  [(ngModel)]="val3"></p-rating></div><br>
+                <div class="ui-g-3" style="margin-top: 63px;margin-left: -296px;"><p-rating readonly="true"  [(ngModel)]="val4"></p-rating></div><br>
+                <div class="ui-g-3" style="margin-top: 81px;margin-left: -296px;"><p-rating readonly="true" [(ngModel)]="val5"></p-rating></div><br>
+            </div>
+        </div>
+    </div>
+</div>

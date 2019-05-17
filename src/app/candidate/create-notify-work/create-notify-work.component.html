@@ -1,0 +1,165 @@
+<h3>{{mgsChild}}</h3>
+
+<form [formGroup]="userform" (ngSubmit)="onSubmit()" *ngIf="!mgsChild1" >
+<p-panel header="">
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="ui-g">
+      <h3>Tạo thông báo việc làm</h3>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+          <span>Tên việc làm</span>
+      </div>
+      <div class="ui-g-9">
+        <span class="ui-float-label">
+          <input formControlName="tenViecLam"  id="float-input" type="text" size="42" pInputText> 
+           <label for="float-input">Tên việc làm</label> 
+          <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['tenViecLam'].valid&&userform.controls['tenViecLam'].dirty"></p-message>
+        </span>
+    </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+          <span>Cấp bậc</span>
+      </div>
+      <div class="ui-g-9">
+        <p-dropdown formControlName="CapBac" [options]="capBac" [style]="{'width':'300px'}" [(ngModel)]="selectedCity1"></p-dropdown>
+        <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+        <span>Khu vực</span>
+      </div>
+      <div class="ui-g-9">
+        <p-dropdown  formControlName="KhuVuc" [options]="khuVuc" [style]="{'width':'300px'}" [(ngModel)]="selectedCity2"></p-dropdown>
+        <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['KhuVuc'].valid&&userform.controls['KhuVuc'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+        <span>Ngành nghề</span>
+      </div>
+      <div class="ui-g-9">
+        <p-dropdown formControlName="NganhNghe"  [options]="nganhNghe" [style]="{'width':'300px'}" [(ngModel)]="selectedCity3"></p-dropdown>
+        <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['NganhNghe'].valid&&userform.controls['NganhNghe'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+        <span>Kỹ năng</span>
+      </div>
+      <div class="ui-g-9">
+        <p-dropdown formControlName="KyNang"  [options]="kyNang" [style]="{'width':'300px'}" [(ngModel)]="selectedCity4"></p-dropdown>
+        <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['KyNang'].valid&&userform.controls['KyNang'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-3">
+        <span>Mức lương</span>
+      </div>
+      <div class="ui-g-9">
+        <span class="ui-float-label">
+          <input formControlName="mucLuong" id="float-input" type="text" size="42" pInputText> 
+          <label  for="float-input">Mức lương</label>
+        </span>
+        <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['mucLuong'].valid&&userform.controls['mucLuong'].dirty"></p-message>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-10">
+        <div class="ui-g" style="margin-left: 200px;">
+          <p-button [disabled]="!userform.valid"  label="Lưu" style="margin-right: 10px;"></p-button>
+          <p-button (click)="Huy()"  type="button" label="Hủy"></p-button>
+      </div>  
+      </div>
+    </div>
+  </div>
+</div>
+</p-panel>
+</form>
+
+
+
+<div *ngIf="mgsChild1">
+  <form [formGroup]="userform" (ngSubmit)="onSubmitEdit()" >
+   <div class="ui-g">
+      <div class="ui-g-12">
+        <div class="ui-g">
+          <h3>Tạo thông báo</h3>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+              <span>Tên việc làm</span>
+          </div>
+          <div class="ui-g-9">
+            <span class="ui-float-label">
+              <input formControlName="tenViecLam" value="{{mgsChild1.nameJob}}" id="float-input" type="text" size="42" pInputText> 
+              
+              <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['tenViecLam'].valid&&userform.controls['tenViecLam'].dirty"></p-message>
+            </span>
+        </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+              <span>Cấp bậc</span>
+          </div>
+          <div class="ui-g-9">
+            <p-dropdown placeholder="{{mgsChild1.capBac}}"  formControlName="CapBac"  [options]="capBac1" [style]="{'width':'300px'}" [(ngModel)]="selectedCity1">
+          
+            </p-dropdown>
+            <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['CapBac'].valid&&userform.controls['CapBac'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+            <span>Khu vực</span>
+          </div>
+          <div class="ui-g-9">
+            <p-dropdown editable="true" placeholder="{{mgsChild1.khuVuc}}" formControlName="KhuVuc" [options]="khuVuc1" [style]="{'width':'300px'}" [(ngModel)]="selectedCity2"></p-dropdown>
+            <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['KhuVuc'].valid&&userform.controls['KhuVuc'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+            <span>Ngành nghề</span>
+          </div>
+          <div class="ui-g-9">
+            <p-dropdown  editable="true" placeholder="{{mgsChild1.nganhNghe}}" formControlName="NganhNghe" [options]="nganhNghe1" [style]="{'width':'300px'}" [(ngModel)]="selectedCity3"></p-dropdown>
+            <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['NganhNghe'].valid&&userform.controls['NganhNghe'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+            <span>Kỹ năng</span>
+          </div>
+          <div class="ui-g-9">
+            <p-dropdown editable="true" placeholder="{{mgsChild1.kyNang}}"  formControlName="KyNang" [options]="kyNang1" [style]="{'width':'300px'}" [(ngModel)]="selectedCity4"></p-dropdown>
+            <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['KyNang'].valid&&userform.controls['KyNang'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-3">
+            <span>Mức lương</span>
+          </div>
+          <div class="ui-g-9">
+            <span class="ui-float-label">
+              <input formControlName="mucLuong" value="{{mgsChild1.mucLuong}}" id="float-input" type="text" size="42" pInputText> 
+              
+            </span>
+            <p-message severity="error" text="Firstname is required" *ngIf="!userform.controls['mucLuong'].valid&&userform.controls['mucLuong'].dirty"></p-message>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-10">
+            <div class="ui-g" style="margin-left: 200px;">
+              <p-button  label="Lưu" style="margin-right: 10px;"></p-button>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </form>
+</div>

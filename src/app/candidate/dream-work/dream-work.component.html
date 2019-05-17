@@ -1,0 +1,54 @@
+<div class="ui-g" style="border: 1px solid">
+  <div class="ui-g-12">
+      <div class="ui-g">
+              <i class="fa fa-flag"></i> 
+              <h1 style="margin-top: -6px;margin-left: 10px;">Công việc mong muốn</h1>
+      </div>
+      <div class="ui-g">
+              <label><strong class="text-red">*</strong>Nơi làm việc</label>
+      </div>
+      <div class="ui-g" style="margin-bottom: 41px;">
+          <div>
+            <p-multiSelect [style.visibility]="x" [options]="diadiem" [(ngModel)]="selectedCars3" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}"></p-multiSelect>
+            <p [style.visibility]="y" style="margin-top: -25px;">Địa điểm: {{selectedCars3}}</p>
+          </div>
+      </div>
+    <div class="ui-g" style="margin-top: -24px;">
+        <label><strong class="text-red">*</strong>Ngành Nghề</label>
+    </div>
+      <div class="ui-g">
+        <div>
+            <p-multiSelect [style.visibility]="x" [options]="nganhNge" [(ngModel)]="selectedCars4" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}"></p-multiSelect>
+            <p [style.visibility]="y" style="margin-top: -25px;">Ngành nghề:{{selectedCars4}}</p>
+        </div>
+      </div>
+      <div class="ui-g" style="margin-top: 27px;">
+              <label><strong class="text-red">*</strong>Mức lương mong muốn</label>
+      </div>
+      <div class="ui-g" style="margin-top: 15px;">
+          <span class="ui-float-label">
+              <input [style.visibility]="x" [(ngModel)]="luong" id="float-input" type="text" size="113" pInputText> 
+              <label [style.visibility]="x"  for="float-input">Mức lương mong muốn</label>
+              <label [style.visibility]="y">{{luong}}</label>
+          </span>
+      </div>
+      <div style="margin-top: 21px;">
+        <label><strong class="text-red">*</strong>Top 5 phúc lợi bạn muốn</label>
+      </div>
+      <div class="ui-g">
+        <div>
+            <p-multiSelect [style.visibility]="x" [options]="phucLoi" [(ngModel)]="selectedCars5" [panelStyle]="{minWidth:'12em'}" [style]="{'width':'750px'}"></p-multiSelect>
+            <p  [style.visibility]="y" style="margin-top: -25px;">Phúc lơi:{{selectedCars5}}</p>
+        </div>
+      </div>
+      <div class="ui-g">
+        <div style="margin-left: 750px;margin-top: 10px;">
+                <button pButton type="button" [style.visibility]="x" style="margin-right: 5px;" label="Hủy" ></button>
+                <button pButton (click)="onClick()" [style.visibility]="x" type="button" label="Lưu" ></button>
+                <div style="margin-top: -33px;margin-left: 61px;">
+                  <button pButton type="button" [style.visibility]="y" (click)="Edit()" style="margin-right: 5px;" label="Edit" ></button>
+                </div>
+        </div>
+      </div> 
+  </div>
+</div>
